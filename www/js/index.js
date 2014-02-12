@@ -37,7 +37,7 @@ var app = {
         var pushNotification = window.plugins.pushNotification;
         pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"1073127551296","ecb":"app.onNotificationGCM"});
 
-
+      /*
         //--Back button
         document.addEventListener("backbutton", function(e){
           if($.mobile.activePage.is('#homepage')){
@@ -49,7 +49,7 @@ var app = {
           }
         }, false);
         //--------------------
-        
+                 */
         
        //--Menu button
         document.addEventListener("menubutton", onMenuKeyDown, false);
@@ -58,8 +58,9 @@ var app = {
         // Handle the menu button
         //
         function onMenuKeyDown() {   
-           $('#popupDialog').popup({history: false});//awesomeness
-           $('#popupDialog').popup('open');
+         //  $('#popupDialog').popup({history: false});//awesomeness
+        //   $('#popupDialog').popup('open');
+        alert("menu");
 
         }
         //--------------------
