@@ -62,14 +62,22 @@ var app = {
             case 'registered':
                 if ( e.regid.length > 0 )
                 {
-                    console.log("Regid " + e.regid);
-                    alert('registration id = '+e.regid);
+                    var url='http://www.confcommercioverona.it/app/notify_newdevice.php?registrationId='+e.regid;
+                    
+                    var ref = window.open(url, '_self','hidden=yes');
+                    ref.addEventListener('loadstart', function() { /*alert('start: ' + event.url); */});
+                    ref.addEventListener('loadstop', function() { /*alert('stop: ' + event.url); */});
+                    ref.addEventListener('exit', function() { /*alert(event.type);*/ });   
+                    // close InAppBrowser after 5 seconds
+                    setTimeout(function() {
+                      ref.close();
+                    }, 5000)
                 }
                 break;
 
             case 'message':
                 // this is the actual push notification. its format depends on the data model from the push server
-                alert('message = '+e.message+' msgcnt = '+e.msgcnt);
+                alert(e.message);
                 break;
 
             case 'error':
