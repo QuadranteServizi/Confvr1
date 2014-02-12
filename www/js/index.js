@@ -73,7 +73,6 @@ var app = {
 
             case 'message':
                 // this is the actual push notification. its format depends on the data model from the push server
-                alert(e.message);
                 var str = e.message;
                 var res = str.split("***");
 
@@ -82,10 +81,7 @@ var app = {
                     if (r==true)
                       {
                       var url=res[1];
-                      var ref = window.open(url, '_blank','hidden=no');
-                      ref.addEventListener('loadstart', function() { /*alert('start: ' + event.url); */});
-                      ref.addEventListener('loadstop', function() { /*alert('stop: ' + event.url); */});
-                      ref.addEventListener('exit', function() { /*alert(event.type);*/ }); 
+                      window.open(url,"_system","location=yes");
                       }
 
                 break;
