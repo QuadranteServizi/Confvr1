@@ -27,6 +27,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('online', this.onLine, false);
     },
     // deviceready Event Handler
     //
@@ -36,18 +37,15 @@ var app = {
         app.receivedEvent('deviceready');
         var pushNotification = window.plugins.pushNotification;
         pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"824841663931","ecb":"app.onNotificationGCM"});
-
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-      /*  var parentElement = document.getElementById(id);
+        var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
-
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);      */
+        console.log('Received Event: ' + id);      
     },
     // result contains any message sent from the plugin call
     successHandler: function(result) {
@@ -63,11 +61,11 @@ var app = {
                 if ( e.regid.length > 0 )
                 {
                     var url='http://www.confcommercioverona.it/app/notify_newdevice.php?registrationId='+e.regid;
-                    
                     var ref = window.open(url, '_blank','hidden=yes');
                     ref.addEventListener('loadstart', function() { /*alert('start: ' + event.url); */});
                     ref.addEventListener('loadstop', function() { /*alert('stop: ' + event.url); */});
-                    ref.addEventListener('exit', function() { /*alert(event.type);*/ });   
+                    ref.addEventListener('exit', function() { /*alert(event.type);*/ }); 
+                    alert("ok");  
                     // close InAppBrowser after 5 seconds
                     setTimeout(function() {
                       ref.close();
