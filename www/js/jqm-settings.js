@@ -9,7 +9,7 @@ $(document).on("mobileinit", function()
     $.extend($.mobile ,
     {
         //http://jquerymobile.com/branches/1.2/docs/pages/page-transitions.html
-        "defaultPageTransition" : "fade"  //fade, slide, slidefade, turn, flip, pop, flow, slideup, slidedown, none
+        "defaultPageTransition" : "slide"  //fade, slide, slidefade, turn, flip, pop, flow, slideup, slidedown, none
 
     });
 });
