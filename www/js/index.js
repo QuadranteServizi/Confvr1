@@ -48,7 +48,7 @@ var app = {
     },
     // result contains any message sent from the plugin call
     successHandler: function(result) {
-        alert('Callback Success! Result = '+result)
+     //   alert('Callback Success! Result = '+result)
     },
     errorHandler:function(error) {
         alert(error);
@@ -64,7 +64,6 @@ var app = {
                     ref.addEventListener('loadstart', function() { /*alert('start: ' + event.url); */});
                     ref.addEventListener('loadstop', function() { /*alert('stop: ' + event.url); */});
                     ref.addEventListener('exit', function() { /*alert(event.type);*/ }); 
-                    alert("ok");  
                     // close InAppBrowser after 5 seconds
                     setTimeout(function() {
                       ref.close();
@@ -74,8 +73,21 @@ var app = {
 
             case 'message':
                 // this is the actual push notification. its format depends on the data model from the push server
-                alert("eccolo");
                 alert(e.message);
+                var str = e.message;
+                var res = str.split("***");
+
+                    var x="";
+                    var r=confirm(res[0]);
+                    if (r==true)
+                      {
+                      var url=res[1];
+                      var ref = window.open(url, '_blank','hidden=no');
+                      ref.addEventListener('loadstart', function() { /*alert('start: ' + event.url); */});
+                      ref.addEventListener('loadstop', function() { /*alert('stop: ' + event.url); */});
+                      ref.addEventListener('exit', function() { /*alert(event.type);*/ }); 
+                      }
+
                 break;
 
             case 'error':
