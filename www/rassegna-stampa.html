@@ -5,18 +5,19 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <!--<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />   -->
 
-
+       <link type="text/css" rel="stylesheet" href="css/custom.css">
     </head>
 <body>
 
-<div id="rassegna-stampa" data-theme="b" data-role="page">
-  <div data-theme="b" data-role="header" data-position="inline"><h1>Rassegna Stampa</h1>
-    <a  href="javascript:history.back()" data-icon="home" data-role="button">Home</a>
+<div id="rassegna-stampa" >
+  <div class="header"><h1 class="titolo">Rassegna Stampa</h1>
+    <span class="left"><a  href="javascript:history.back()" data-icon="home" data-role="button">Home</a></span>
   </div>
-  <div data-role="content">
-    <div class="resp">
-      <img src="img/logo.png" alt="page image" />
-    </div>
+  <div id="spacerx"></div>
+  <div>
+      <div id="logo-wrap">
+          <img src="img/logo.png" alt="Confcommercio Verona" />
+        </div>
     <p align="center">Ecco la rassegna stampa a cura dell'Ufficio Stampa di Confcommercio Verona</p>
 
 <script>  
@@ -41,7 +42,7 @@ xmlhttp.send();
 
 <div id="rssOutput">Caricamento...</div>
 
-  <div data-theme="b" data-role="footer" data-position="fixed"><h1>&copy; 2014 Confcommercio Verona</h1>
+     <div class="footer"><h1 class="titolo">&copy; 2014 Confcommercio Verona </h1>
   </div>
 </div>
 

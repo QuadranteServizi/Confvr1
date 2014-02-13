@@ -1,0 +1,134 @@
+body{
+font-family: Helvetica,Arial,sans-serif;
+background: linear-gradient(#F9F9F9, #EEEEEE) repeat scroll 0 0 #F9F9F9;
+color: #333333;
+text-shadow: 0 1px 0 #FFFFFF;
+}
+
+a{
+text-decoration: none;
+}
+
+.header {
+    background: linear-gradient(#3B6887, #1E404D) repeat scroll 0 0 #3B6887;
+    border: 1px solid #3B6887;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-shadow: 0 1px 1px #444444;
+    position: fixed;
+    top: 0;
+    width:100%;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 16px;
+}
+
+div span.left{
+	position:absolute;
+	left: 45px;
+	text-align: left;
+	color: #385487;
+	font-weight: normal;
+}
+
+.footer {
+    background: linear-gradient(#3B6887, #1E404D) repeat scroll 0 0 #3B6887;
+    border: 1px solid #3B6887;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-shadow: 0 1px 1px #444444;
+    position: fixed;
+    bottom: 0;
+    width:100%;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 16px;
+}
+
+
+.app {
+    height: 50px;
+    left: 50%;
+    margin: -115px 0 0 -112px;
+    padding: 180px 0 0;
+    position: absolute;
+    text-align: center;
+    top: 80%;
+    width: 225px;
+}
+
+
+ul{
+	list-style: none;
+	margin: 10px;
+	padding: 0px;
+}
+
+li{
+	background-color: white;
+	border: 1px solid #ababab;
+	margin-bottom: -2px;
+	padding: 12px 10px;
+	text-align: left;
+	color: black;
+	font-weight: bold;
+}
+
+li.arrow{
+  background-image: url(arrow.png);
+  background-position: right center;
+  background-repeat: no-repeat;	
+}
+
+li:first-child{
+   -webkit-border-top-left-radius: 12px;
+   -webkit-border-top-right-radius: 12px;
+}
+
+li:last-child {
+   -webkit-border-bottom-left-radius: 12px;
+   -webkit-border-bottom-right-radius: 12px;
+}
+
+
+
+.titolo{
+    display: block;
+    font-size: 16px;
+    margin: 0.6em 30% 0.8em;
+    min-height: 1.1em;
+    outline: 0 none !important;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+#spacer{
+    clear: both;
+    width:100%;
+    height:2px;
+    background:#063453;
+    margin-bottom:20px;
+}
+#spacerx{
+    clear: both;
+    width:100%;
+    height:1px;
+    background:#063453;
+    margin-top:35px;
+}
+
+#logo-wrap{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+  
+#logo-wrap img{
+      max-width:100% !important;
+    max-height:100% !important;
+    
+}
+    
