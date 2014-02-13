@@ -1,22 +1,41 @@
+html {
+    width: 100%;
+    height: 100%;
+
+}
+
 body{
-font-family: Helvetica,Arial,sans-serif;
-background: linear-gradient(#F9F9F9, #EEEEEE) repeat scroll 0 0 #F9F9F9;
-color: #333333;
-text-shadow: 0 1px 0 #FFFFFF;
+    margin: 0;
+    font-family: Helvetica,Arial,sans-serif;
+    background: linear-gradient(#F9F9F9, #EEEEEE) repeat scroll 0 0 #EEEEEE;
+    background: -webkit-linear-gradient(top, #F9F9F9 0%, #EEEEEE 100%);  
+    background: -moz-linear-gradient(top, #3B6887 0%, #1E404D 100%);  
+    background: -ms-linear-gradient(top, #3B6887 0%, #1E404D 100%);  
+    background: -o-linear-gradient(top, #3B6887 0%, #1E404D 100%);  
+    background: linear-gradient(top, #3B6887 0%, #1E404D 100%);
+    text-shadow: 0 1px 0 #FFFFFF;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
 }
 
 a{
 text-decoration: none;
+
 }
 
 .header {
-    background: linear-gradient(#3B6887, #1E404D) repeat scroll 0 0 #3B6887;
-    border: 1px solid #3B6887;
+    background-image: -webkit-linear-gradient(top, #3B6887 0%, #1E404D 100%);  
+    background-image: -moz-linear-gradient(top, #3B6887 0%, #1E404D 100%);  
+    background-image: -ms-linear-gradient(top, #3B6887 0%, #1E404D 100%);  
+    background-image: -o-linear-gradient(top, #3B6887 0%, #1E404D 100%);  
+    background-image: linear-gradient(top, #3B6887 0%, #1E404D 100%);
     color: #FFFFFF;
     font-weight: bold;
     text-shadow: 0 1px 1px #444444;
     position: fixed;
     top: 0;
+    left: 0;
     width:100%;
     font-family: Helvetica,Arial,sans-serif;
     font-size: 16px;
@@ -24,25 +43,35 @@ text-decoration: none;
 
 div span.left{
 	position:absolute;
-	left: 45px;
-	text-align: left;
-	color: #385487;
-	font-weight: normal;
+  top: 4px;
+	left: 15px;
+  background-color: #ffffff;
+  border: solid 1px rgba(30,64,77,1);
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+   border-radius: 25px;
+   padding: 5px;
+   display: inline-block;
+   color: rgba(0,0,0,1);
+
 }
 
 .footer {
-    background: linear-gradient(#3B6887, #1E404D) repeat scroll 0 0 #3B6887;
-    border: 1px solid #3B6887;
+    background-image: -webkit-linear-gradient(top, #3B6887 0%, #1E404D 100%);  
+    background-image: -moz-linear-gradient(top, #3B6887 0%, #1E404D 100%);  
+    background-image: -ms-linear-gradient(top, #3B6887 0%, #1E404D 100%);  
+    background-image: -o-linear-gradient(top, #3B6887 0%, #1E404D 100%);  
+    background-image: linear-gradient(top, #3B6887 0%, #1E404D 100%);
     color: #FFFFFF;
     font-weight: bold;
     text-shadow: 0 1px 1px #444444;
     position: fixed;
     bottom: 0;
+    left: 0;
     width:100%;
     font-family: Helvetica,Arial,sans-serif;
     font-size: 16px;
 }
-
 
 .app {
     height: 50px;
@@ -55,45 +84,51 @@ div span.left{
     width: 225px;
 }
 
+#menu{
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px #ababab solid;
+    width: 90%;
+    background-color: white;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-raiuds: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
 
 ul{
 	list-style: none;
-	margin: 10px;
+	margin: 0px;
 	padding: 0px;
 }
 
-li{
-	background-color: white;
-	border: 1px solid #ababab;
-	margin-bottom: -2px;
-	padding: 12px 10px;
-	text-align: left;
-	color: black;
-	font-weight: bold;
+li{ 
+  border-bottom: 1px #ababab solid;
+  	text-align: center;
 }
+li:last-of-type { border: 0px; }
 
-li.arrow{
-  background-image: url(arrow.png);
-  background-position: right center;
-  background-repeat: no-repeat;	
+
+ul li a{
+    display: block;
+    margin-bottom: -2px;
+   	padding: 12px 10px;
+    text-decoration: none;
+    font-weight: bold;
+
+
 }
-
-li:first-child{
-   -webkit-border-top-left-radius: 12px;
-   -webkit-border-top-right-radius: 12px;
-}
-
-li:last-child {
-   -webkit-border-bottom-left-radius: 12px;
-   -webkit-border-bottom-right-radius: 12px;
-}
-
+ul li a:visited { text-decoration: none; }
+ul li a:hover { text-decoration: none; }
+ul li a:focus { text-decoration: none; }
+ul li a:hover, a:active { text-decoration: none; }
 
 
 .titolo{
     display: block;
     font-size: 16px;
-    margin: 0.6em 30% 0.8em;
+    margin: 0.6em 10% 0.8em;
     min-height: 1.1em;
     outline: 0 none !important;
     overflow: hidden;
@@ -119,12 +154,19 @@ li:last-child {
     margin-top:35px;
 }
 
+
+
 #logo-wrap{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
 
+#rssOutput{
+    width: 100%;
+    height: 100%;   
+      min-height: 100%;
+}
   
 #logo-wrap img{
       max-width:100% !important;

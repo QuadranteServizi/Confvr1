@@ -1,50 +1,63 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <!--<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />   -->
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <link type="text/css" rel="stylesheet" href="css/custom.css">
+        <title>Confcommercio Verona</title>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/jqm-settings.js"></script>      
+        <script type="text/javascript" src="js/custom.js"></script>
+        <script type="text/javascript" src="PushNotification.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+         <script type="text/javascript">
+                    app.initialize();
+        </script>
+    </head> 
+    <body class="corpo"> 
+      <div class="header">
+        <h1 class="titolo">Rassegna Stampa</h1>
+          <span class="left" id="homeb">
+            <a  href="javascript:history.back()">
+              Menu
+            </a>
+          </span>
+          
 
-       <link type="text/css" rel="stylesheet" href="css/custom.css">
-    </head>
-<body>
 
-<div id="rassegna-stampa" >
-  <div class="header"><h1 class="titolo">Rassegna Stampa</h1>
-    <span class="left"><a  href="javascript:history.back()" data-icon="home" data-role="button">Home</a></span>
-  </div>
-  <div id="spacerx"></div>
-  <div>
+      </div>
+    <div id="spacerx"></div>
+    <div>
       <div id="logo-wrap">
           <img src="img/logo.png" alt="Confcommercio Verona" />
-        </div>
-    <p align="center">Ecco la rassegna stampa a cura dell'Ufficio Stampa di Confcommercio Verona</p>
+      </div>
+      <p align="center">Ecco la rassegna stampa a cura dell'Ufficio Stampa di Confcommercio Verona</p>
 
-<script>  
-if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-  xmlhttp=new XMLHttpRequest();
-  }
-else
-  {// code for IE6, IE5
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange=function()
-  {
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-    {
-    document.getElementById("rssOutput").innerHTML=xmlhttp.responseText;
-    }
-  } 
-xmlhttp.open("GET","http://www.confcommercioverona.it/app/getrss.php?q=rassegnastampa",true);
-xmlhttp.send();
-</script>
+      <script>  
+      if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+        }
+      else
+        {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+      xmlhttp.onreadystatechange=function()
+        {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+          {
+          document.getElementById("rssOutput").innerHTML=xmlhttp.responseText;
+          }
+        } 
+      xmlhttp.open("GET","http://www.confcommercioverona.it/app/getrss.php?q=rassegnastampa",true);
+      xmlhttp.send();
+      </script>
 
-<div id="rssOutput">Caricamento...</div>
+      <div id="rssOutput">Caricamento...</div>
 
-     <div class="footer"><h1 class="titolo">&copy; 2014 Confcommercio Verona </h1>
-  </div>
-</div>
-
-</body>
+      
+      <div class="footer"><h1 class="titolo">&copy; 2014 Confcommercio Verona </h1>
+      </div>
+    </div>
+  </body>
 </html>
