@@ -36,6 +36,39 @@ var app = {
         app.receivedEvent('deviceready');
         var pushNotification = window.plugins.pushNotification;
         pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"1073127551296","ecb":"app.onNotificationGCM"});
+        
+        var onSettings = function() {
+          console.log("settings");
+          var url='http://www.google.it';
+          var ref = window.open(url, '_blank','hidden=no');
+        };
+     
+        var onHelp = function() {
+            console.log("help");
+            console.log("settings");
+          var url='http://www.google.it';
+          var ref = window.open(url, '_blank','hidden=no');
+        };
+     
+        var optionsmenu = new OptionsMenu({
+            id: "optionsmenu",
+            items: [ 
+                [ {
+                    label: "Impostazioni",
+                    image: "img/settings.png",
+                    action: onSettings
+                }, 
+                {
+                    label: "Contatti",
+                    image: "img/help.png",
+                    action: onHelp
+                } ]
+            ]
+        });
+            
+        
+        
+        
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

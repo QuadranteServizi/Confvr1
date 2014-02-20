@@ -1,36 +1,72 @@
-<div id="contatti" data-theme="b" data-role="page">
-  <div data-theme="b" data-role="header" data-position="inline"><h1>Contatti</h1>
-    <a href="javascript:history.back()" data-icon="home" data-role="button">Home</a>
-  </div>
-  <div data-role="content">
-    <p>Inviaci un email!
-    </p>
-<script>
-                    JQMB.contact_form = {
-                        name: 'Confcommercio Verona',
-                        email:  'info@confcommercioverona.it'
-                    }
-                </script><form method="POST" action="php/contact.php" id="contact" novalidate="novalidate">
-                    <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
-                        <label for="name" class="ui-input-text">
-                            Nome*:
-                        </label>
-                        <input type="text" class="required ui-input-text ui-body-d ui-corner-all ui-shadow-inset"
-                        value="" name="name" id="name">
-                    </div>
-                    <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
-                        <label for="email" class="ui-input-text">
-                            Email*:
-                        </label>
-                        <input type="email" class="required ui-input-text ui-body-d ui-corner-all ui-shadow-inset"
-                        value="" name="email" id="email">
-                    </div>
-                    <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
-                        <label for="msg" class="ui-input-text">
-                            Testo*:
-                        </label>
-                        <textarea class="required ui-input-text ui-body-d ui-corner-all ui-shadow-inset"
-                        rows="8" cols="160" name="msg" id="msg"></textarea>
-                    </div>
-                    <button type="submit" data-theme="b" name="submit" value="submit" class="ui-btn-hidden" aria-disabled="false">Invia il messaggio!</button>
-                </form></div><div data-theme="b" data-role="footer" data-position="fixed"><h1>&copy; 2014 Confcommercio Verona </h1></div></div>
+<!DOCTYPE html>
+<html>    
+  <head>        
+    <meta charset="utf-8" />        
+    <meta name="viewport" content="width=device-width, user-scalable=no">        
+    <link type="text/css" rel="stylesheet" href="css/custom.css">        
+    <title>Confcommercio Verona
+    </title>        
+<script type="text/javascript" src="phonegap.js"></script>        
+<script type="text/javascript" src="js/jqm-settings.js"></script>               
+<script type="text/javascript" src="js/custom.js"></script>         
+<script type="text/javascript" src="PushNotification.js"></script>         
+<script type="text/javascript" src="js/index.js"></script>          
+<script type="text/javascript">
+                    app.initialize();
+        </script>     
+  </head>      
+  <body class="corpo">        
+            <div class="header">
+          <h1 class="bar"></h1>
+          <div id="homebutton">
+            <a  href="javascript:history.back()">
+              <img src="img/icona.png" alt="Confcommercio Verona" style="vertical-align:middle;"/>  Home
+            </a>  
+          </div>
+          <div id="settingsbutton">
+            <a  href="javascript:history.back()">&nbsp; 
+              <img src="img/settings.png" alt="Impostazioni" style="vertical-align:middle;"/>
+            </a>    
+          </div>
+       </div>  
+    <div id="spacerx">
+    </div>    
+    <div>      
+      <div id="logo-wrap">             
+      </div>  
+       <h1 class="titolo">Contatti</h1>  
+      <p>Inviaci un email!     
+      </p>
+      <script>
+          JQMB.contact_form = {
+               name: 'Confcommercio Verona',
+               email:  'enrico.ced@qevr.it'
+          }
+      </script>
+      <form method="POST" action="php/contact.php" id="contact" novalidate="novalidate">                    
+        <div>                        
+          <label for="name">                            Nome*:                         
+          </label>                        
+          <input type="text" value="" name="name" id="name">                    
+        </div>                    
+        <div>                        
+          <label for="email">Email*:                         
+          </label>                        
+          <input type="email" value="" name="email" id="email">                    
+        </div>                    
+        <div >                        
+          <label for="msg">Testo*:                         
+          </label>                        
+          <textarea rows="8" name="msg" id="msg"></textarea>                    
+        </div>                    
+        <button type="submit" name="submit" value="submit">Invia il messaggio!
+        </button>                
+      </form>
+    </div>                                 
+    <div class="footer">
+      <h1 class="titolo">&copy; 2014 Confcommercio Verona </h1>      
+    </div>  
+  </body>
+</html>
+                
+                
