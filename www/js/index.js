@@ -38,16 +38,11 @@ var app = {
         pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"1073127551296","ecb":"app.onNotificationGCM"});
         
         var onSettings = function() {
-          console.log("settings");
-          var url='http://www.google.it';
-          var ref = window.open(url, '_blank','hidden=no');
+           window.location="settings.html";
         };
      
         var onHelp = function() {
-            console.log("help");
-            console.log("settings");
-          var url='http://www.google.it';
-          var ref = window.open(url, '_blank','hidden=no');
+            window.location="help.html";
         };
      
         var optionsmenu = new OptionsMenu({

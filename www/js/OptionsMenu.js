@@ -1,3 +1,5 @@
+
+
 var OptionsMenu = function(menu) {
     var detectIconSize = function() {
         var width = screen.width;
@@ -9,11 +11,11 @@ var OptionsMenu = function(menu) {
             return 36;
         }
     };
-
+    
     var iconSize = detectIconSize();
     var menuDiv = document.createElement("div");
     menuDiv.setAttribute("id", menu.id);
-    menuDiv.setAttribute("style", "display: none; position: fixed; bottom: 0; width: 100%");
+    menuDiv.setAttribute("style", "display: none; position: fixed; bottom: 0;left:0;z-index:2; width: 100%");
     var menuTable = document.createElement("table");
     menuTable.setAttribute("style", "width: 100%;");
     menuTable.setAttribute("cellpadding", "0");
@@ -32,11 +34,12 @@ var OptionsMenu = function(menu) {
             var menuItem = document.createElement("td");
             menuItem.setAttribute("align", "center");
             menuItem.setAttribute("width", width);
-            menuItem.setAttribute("style", "color: white; font-weight: bold; border-top: 1px solid grey; border-right: 1px solid grey; background-color: black");
+            menuItem.setAttribute("style", "color: white; font-weight: bold; border-top: 1px solid grey; border-right: 1px solid grey; background-color: #00457c");
             menuItem.addEventListener("click", item.action, false);
             menuItem.addEventListener("click", function() {
-                    document.getElementById(menu.id).style.display = 'none';
+                    document.getElementById(menu.id).style.display = 'none';        /*era none*/
                 }, false);
+                
             if (item.image) {
                 var imgItem = document.createElement("img");
                 imgItem.setAttribute("src", item.image);
@@ -62,3 +65,31 @@ var OptionsMenu = function(menu) {
         }
     }, false);
 };
+
+ window.onload = function () {
+ 
+
+         var onSettings = function() {
+           window.location="settings.html";
+        };
+     
+        var onHelp = function() {
+            window.location="help.html";
+        };
+        var optionsmenu = new OptionsMenu({
+            id: "optionsmenu",
+            items: [ 
+                [ {
+                    label: "Impostazioni",
+                    image: "img/settings.png",
+                    action: onSettings
+                }, 
+                {
+                    label: "Contatti",
+                    image: "img/help.png",
+                    action: onHelp
+                } ]
+            ]
+        });
+
+}
