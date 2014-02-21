@@ -129,7 +129,7 @@ li{
 
 ul li a{
    display: block;
-   width:100%;
+   width:95%;
    text-decoration: none;
    font-weight: bold;
    /*height:40px; */
@@ -195,14 +195,15 @@ li:last-of-type { border: 0px; }
 }
 
 #logo-wrap{
-   width:80%;
-   left:50%;
+
+   width: 80%; 
    margin-left: auto;
-   margin-right: auto;
+   margin-right:  auto;
+   margin-bottom:  15%;  
    text-align: center;
    margin-top:5px;
    z-index:0;
-  /* height:80px;*/
+   vertical-align: middle;
 }
 
 #logo-wrap img{
@@ -218,7 +219,7 @@ li:last-of-type { border: 0px; }
 
 
 .imgwrap{
-   width: 100%;
+   
 }
 
 .imgwrap img{
@@ -235,7 +236,7 @@ li:last-of-type { border: 0px; }
 
 @media screen and (min-width: 240px) {
    body {
-      /*background: orange; */
+     /* background: orange; */
       font-size: 13px;
    }
    #menu{
@@ -248,7 +249,7 @@ li:last-of-type { border: 0px; }
     
 @media screen and (min-width: 480px) {
    body {
-      /*background: red;*/
+    /*  background: red;  */
       font-size: 14px;
    }
    #menu{
@@ -261,7 +262,7 @@ li:last-of-type { border: 0px; }
  
 @media screen and (min-width: 768px) {
    body {
-   /*  background: purple;*/ 
+    /* background: purple;  */
      font-size: 16px;
    }
    #menu{
@@ -297,9 +298,31 @@ li:last-of-type { border: 0px; }
   #menu{
       top:5%;
    }
+    ul li a{
+   padding:2%;
+ }
+}
+
+@media screen and (max-height: 450px) {
+  #logo-wrap{
+    display:none;
+  } 
+  #menu{
+      top:15%;
+   }
+    ul li a{
+   padding:2%;
+ }
+  #spacerhome{
+    margin-top:65px;
+   }
 }
 
 @media screen and (min-height: 480px) {
+
+ /*body {
+  background: blue; 
+ }      */
  .footer {
    display:block;
  }
@@ -312,11 +335,13 @@ li:last-of-type { border: 0px; }
   #spacerhome{
    margin-top:45px;
 }
- #logo-wrap{
-    width:50%;
-  } 
+ 
 }
 @media screen and (min-height: 720px) {
+/* body {
+  background: black; 
+ }  */
+
    ul li a{
      /*height:70px;   */
         padding:4%;
@@ -328,13 +353,15 @@ li:last-of-type { border: 0px; }
         width: 95%;
     }
     
-     #logo-wrap{
-    width:70%;
-  } 
   
    #spacerhome{
     margin-top:65px;
    }
+    .titolo{
+  
+   font-size: 22px;
+
+}
 }
 
 /*Per settings*/

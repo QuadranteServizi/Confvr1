@@ -1,5 +1,3 @@
-
-
 var OptionsMenu = function(menu) {
     var detectIconSize = function() {
         var width = screen.width;
@@ -15,7 +13,7 @@ var OptionsMenu = function(menu) {
     var iconSize = detectIconSize();
     var menuDiv = document.createElement("div");
     menuDiv.setAttribute("id", menu.id);
-    menuDiv.setAttribute("style", "display: none; position: fixed; bottom: 0;left:0;z-index:2; width: 100%");
+    menuDiv.setAttribute("style", "display: block; position: fixed; bottom: 0;left:0;z-index:2; width: 100%");
     var menuTable = document.createElement("table");
     menuTable.setAttribute("style", "width: 100%;");
     menuTable.setAttribute("cellpadding", "0");
@@ -34,7 +32,7 @@ var OptionsMenu = function(menu) {
             var menuItem = document.createElement("td");
             menuItem.setAttribute("align", "center");
             menuItem.setAttribute("width", width);
-            menuItem.setAttribute("style", "color: white; font-weight: bold; border-top: 1px solid grey; border-right: 1px solid grey; background-color: #00457c");
+            menuItem.setAttribute("style", "color: white;  border-bottom: 10px solid #00457c; border-right: 1px solid white; border-left: 1px solid white;background-color: #00457c");
             menuItem.addEventListener("click", item.action, false);
             menuItem.addEventListener("click", function() {
                     document.getElementById(menu.id).style.display = 'none';        /*era none*/
@@ -74,7 +72,7 @@ var OptionsMenu = function(menu) {
         };
      
         var onHelp = function() {
-            window.location="help.html";
+            window.location="contatti.html";
         };
         var optionsmenu = new OptionsMenu({
             id: "optionsmenu",
@@ -86,7 +84,7 @@ var OptionsMenu = function(menu) {
                 }, 
                 {
                     label: "Contatti",
-                    image: "img/help.png",
+                    image: "img/contacts.png",
                     action: onHelp
                 } ]
             ]
