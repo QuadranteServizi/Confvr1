@@ -58,7 +58,7 @@ var app = {
                 }, 
                 {
                     label: "Contatti",
-                    image: "img/help.png",
+                    image: "img/contacts.png",
                     action: onHelp
                 } ]
             ]
@@ -168,6 +168,7 @@ var app = {
             
             // retrieve a file and truncate it
             root.getFile('impostazioni_confcommercio.txt', {create: false}, remove_file, onFileSystemError);
+            alert("file creato?");
         }    
         
       /*---------------*/  
