@@ -13,7 +13,7 @@ var OptionsMenu = function(menu) {
     var iconSize = detectIconSize();
     var menuDiv = document.createElement("div");
     menuDiv.setAttribute("id", menu.id);
-    menuDiv.setAttribute("style", "display: none; position: fixed; bottom: 0;left:0;z-index:2; width: 100%");
+    menuDiv.setAttribute("style", "display: block; position: fixed; bottom: 0;left:0;z-index:2; width: 100%");
     var menuTable = document.createElement("table");
     menuTable.setAttribute("style", "width: 100%;");
     menuTable.setAttribute("cellpadding", "0");
@@ -68,6 +68,7 @@ var OptionsMenu = function(menu) {
  
 
          var onSettings = function() {
+           writeFile();
            window.location="settings.html";
         };
      

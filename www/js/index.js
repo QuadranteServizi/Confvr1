@@ -41,7 +41,7 @@ var app = {
         
        //Opzioni del menu  - vedi OptionsMenu.js per il trigger del tasto menu
         var onSettings = function() {
-          writeFile();
+           writeFile();
            window.location="settings.html";
         };
      
