@@ -68,7 +68,7 @@ var OptionsMenu = function(menu) {
  
 
          var onSettings = function() {
-           writeFile();
+           writeFile.call();
            window.location="settings.html";
         };
      
