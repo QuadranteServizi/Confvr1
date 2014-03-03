@@ -19,21 +19,25 @@
           <h1 class="bar"></h1>
           <div id="homebutton">
             <a  href="javascript:history.back()">
-              <img src="img/icona.png" alt="Confcommercio Verona" style="vertical-align:middle;"/>  Home
+              <img src="img/icona.png" alt="Confcommercio Verona" style="vertical-align:middle;"/>
             </a>  
           </div>
-          <div id="settingsbutton">
-            <a  href="javascript:history.back()">&nbsp; 
-              <img src="img/settings.png" alt="Impostazioni" style="vertical-align:middle;"/>
-            </a>    
-          </div>
-       </div>
-    <div id="spacerx"></div>
-    <div>
-      <div id="logo-wrap">
-      </div>
+   <!--<div id="settingsbutton">
+           <a  href="javascript:history.back()">&nbsp; 
+         <img src="img/settings.png" alt="Impostazioni" style="vertical-align:middle;"/>
+         </a>    
+        </div>-->
+      </div> 
+      <div class="footer">
+        <h1 class="bar">&copy; <script>document.write(new Date().getFullYear())</script> Confcommercio Verona </h1>
+      </div>  
+      <div id="spacerhome">
+        </div> 
+        <div id="logo-wrap">
+          <img src="img/logo_big.png" alt="Confcommercio Verona" />
+        </div>
       <h1 class="titolo">Video</h1>
-      <p>Ecco i video di Confcommercio Verona </p>
+      <p>I video di Confcommercio Verona dal canale Vimeo</p>
  
   
   <script>  
@@ -52,15 +56,46 @@ xmlhttp.onreadystatechange=function()
     document.getElementById("rssOutput").innerHTML=xmlhttp.responseText;
     }
   } 
-xmlhttp.open("GET","http://www.confcommercioverona.it/app/getrss.php?q=video",true);
+xmlhttp.open("GET","http://www.confcommercioverona.it/app/getrss.php?q=videovimeo",true);
 xmlhttp.send();
 </script>
 
-<div id="rssOutput">Caricamento...</div>
+
+  <script>  
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp2=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp2=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp2.onreadystatechange=function()
+  {
+  if (xmlhttp2.readyState==4 && xmlhttp2.status==200)
+    {
+    document.getElementById("rssOutput2").innerHTML=xmlhttp2.responseText;
+    }
+  } 
+xmlhttp2.open("GET","http://www.confcommercioverona.it/app/getrss.php?q=video",true);
+xmlhttp2.send();
+</script>
+
+
+
+
+<div id="rssOutput">Caricamento Vimeo...</div>
+  </div> 
+  <div id="spacerhome">
+        </div>
+        <div id="spacer">
+        </div> 
+  <p>I video di Confcommercio Verona dal canale Youtube</p>
+<div id="rssOutput2">Caricamento Youtube...</div>
   </div>
   
   
-      <div class="footer"><h1 class="titolo">&copy; 2014 Confcommercio Verona </h1>
+      <div class="footer"> <h1 class="bar">&copy; <script>document.write(new Date().getFullYear())</script> Confcommercio Verona </h1>
       </div>
     </div>
   </body>

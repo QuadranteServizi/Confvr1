@@ -15,27 +15,29 @@
         </script>
     </head> 
     <body class="corpo"> 
-        <div class="header">
+              <div class="header">
           <h1 class="bar"></h1>
           <div id="homebutton">
             <a  href="javascript:history.back()">
               <img src="img/icona.png" alt="Confcommercio Verona" style="vertical-align:middle;"/>
             </a>  
           </div>
-         <!-- <div id="settingsbutton">
-            <a  href="javascript:history.back()">&nbsp; 
-              <img src="img/settings.png" alt="Impostazioni" style="vertical-align:middle;"/>
-            </a>    
-          </div>  -->
-       </div>
-    <div id="spacerx"></div>
-    <div>
-      <div id="logo-wrap">
+            <!--<div id="settingsbutton">
+           <a  href="javascript:history.back()">&nbsp; 
+         <img src="img/settings.png" alt="Impostazioni" style="vertical-align:middle;"/>
+         </a>    
+        </div>-->
+      </div> 
+      <div class="footer">
+        <h1 class="bar">&copy; <script>document.write(new Date().getFullYear())</script> Confcommercio Verona </h1>
+      </div>  
+      <div id="spacerhome">
+        </div> 
+        <div id="logo-wrap">
           <img src="img/logo_big.png" alt="Confcommercio Verona" />
         </div>
-      <h1 class="titolo">Rassegna Stampa</h1>
-      <p align="center">Ecco la rassegna stampa a cura dell'Ufficio Stampa di Confcommercio Verona</p>
-
+      <h1 class="titolo">News dal sito</h1>
+       <p>Corsi di formazione pubblicati sul sito www.confcommercioverona.it</p>
       <script>  
       if (window.XMLHttpRequest)
         {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -47,21 +49,22 @@
         }
       xmlhttp.onreadystatechange=function()
         {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-          {
+         if (xmlhttp.readyState == 4) {
+                  if (xmlhttp.status == 200 || xmlhttp.status == 0) {
+      
           document.getElementById("rssOutput").innerHTML=xmlhttp.responseText;
           }
+          }
         } 
-      xmlhttp.open("GET","http://www.confcommercioverona.it/app/getrss.php?q=rassegnastampa",true);
+      xmlhttp.open("GET","http://www.confcommercioverona.it/app/getrss.php?q=corsi",true);
       xmlhttp.send();
       </script>
 
       <div id="rssOutput">Caricamento...</div>
 
-      
-      <div class="footer"> <h1 class="bar">&copy; <script>document.write(new Date().getFullYear())</script> Confcommercio Verona </h1>  
+  
+      <div class="footer"> <h1 class="bar">&copy; <script>document.write(new Date().getFullYear())</script> Confcommercio Verona </h1>
       </div>
-      <div id="spacerbottom"></div>
     </div>
   </body>
 </html>
