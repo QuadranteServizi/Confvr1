@@ -68,7 +68,9 @@ var OptionsMenu = function(menu) {
  
 
          var onSettings = function() {
+         alert("chiamo");
            writeFile.call();
+           alert("chiamata!")
            window.location="settings.html";
         };
      

@@ -70,6 +70,7 @@ var app = {
         
          // retrieves root file system entry
         var getFileSystemRoot = (function() {
+        alert("funzione");
  
             // private
             var root;
@@ -82,7 +83,7 @@ var app = {
                     }, 
                     onFileSystemError);
             };
-          
+             document.addEventListener("deviceready", init, true); 
  
             // public function returns private root entry
             return function() {
