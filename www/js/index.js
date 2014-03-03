@@ -40,7 +40,7 @@ var app = {
         pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"1073127551296","ecb":"app.onNotificationGCM"});
         
        //Opzioni del menu  - vedi OptionsMenu.js per il trigger del tasto menu
-        var onSettings = function() {
+     /*   var onSettings = function() {
            writeFile();
            window.location="settings.html";
         };
@@ -63,7 +63,7 @@ var app = {
                     action: onHelp
                 } ]
             ]
-        });
+        });  */
          
         /*------------------*/
         //Area di gestione del file di impostazioni
