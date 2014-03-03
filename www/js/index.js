@@ -41,6 +41,7 @@ var app = {
         
        //Opzioni del menu  - vedi OptionsMenu.js per il trigger del tasto menu
         var onSettings = function() {
+          writeFile();
            window.location="settings.html";
         };
      
@@ -155,6 +156,7 @@ var app = {
             
             // create a file and write to it
             root.getFile('impostazioni_confcommercio.txt', {create: true}, create_writer, onFileSystemError);
+            alert("file creato?");
         }
         
         // remove file system entry
@@ -168,7 +170,7 @@ var app = {
             
             // retrieve a file and truncate it
             root.getFile('impostazioni_confcommercio.txt', {create: false}, remove_file, onFileSystemError);
-            alert("file creato?");
+            
         }    
         
       /*---------------*/  
