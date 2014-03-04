@@ -27,6 +27,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('online', this.onLine, false);
     },
     // deviceready Event Handler
     //
@@ -39,33 +40,7 @@ var app = {
         var pushNotification = window.plugins.pushNotification;
         pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"1073127551296","ecb":"app.onNotificationGCM"});
         
-       //Opzioni del menu  - vedi OptionsMenu.js per il trigger del tasto menu
-     /*   var onSettings = function() {
-           writeFile();
-           window.location="settings.html";
-        };
-     
-        var onHelp = function() {
-            window.location="help.html";
-        };
-     
-        var optionsmenu = new OptionsMenu({
-            id: "optionsmenu",
-            items: [ 
-                [ {
-                    label: "Impostazioni",
-                    image: "img/settings.png",
-                    action: onSettings
-                }, 
-                {
-                    label: "Contatti",
-                    image: "img/contacts.png",
-                    action: onHelp
-                } ]
-            ]
-        });  */
-         
-        /*------------------*/
+       /*
         //Area di gestione del file di impostazioni
         
          // retrieves root file system entry

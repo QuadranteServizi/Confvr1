@@ -1,78 +1,65 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-        <link type="text/css" rel="stylesheet" href="css/custom.css">
-        <title>Confcommercio Verona</title>
-        <script type="text/javascript" src="phonegap.js"></script>
-        
-          
-        
-        <script type="text/javascript" src="PushNotification.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
+<html>    
+  <head>        
+    <meta charset="utf-8" />        
+    <meta name="viewport" content="width=device-width, user-scalable=no">        
+    <link type="text/css" rel="stylesheet" href="css/custom.css">        
+    <title>Confcommercio Verona
+    </title>        
+<script type="text/javascript" src="phonegap.js"></script>                                     
+<script type="text/javascript" src="PushNotification.js"></script>         
+<script type="text/javascript" src="js/index.js"></script>         
+<script type="text/javascript">
                     app.initialize();
-        </script>
+        </script>                  
+<script type="text/javascript" charset="utf-8" src="js/OptionsMenu.js"/></script>                        
+  </head>      
+  <body class="corpo">     
+<script type="text/javascript" charset="utf-8" src="js/settings.js"/></script>     
+    <div class="header">        
+      <h1 class="bar">Confcommercio Verona</h1>            
+      <div id="homebutton">        
+        <a  href="javascript:history.back()">             
+          <img src="img/icona.png" alt="Confcommercio Verona" style="vertical-align:middle;"/>        </a>              
+      </div>      
+    </div>        
+    <div class="footer">        
+      <h1 class="bar">&copy; 
+<script>document.write(new Date().getFullYear()); 
         
-        <script type="text/javascript" charset="utf-8" src="js/OptionsMenu.js"/></script>
-        
-
-
-         
-    </head> 
-    <body class="corpo">
-
-     <script type="text/javascript" charset="utf-8" src="js/settings.js"/></script>
-     <div class="header">
-        <h1 class="bar">Confcommercio Verona</h1>
-            <div id="homebutton">
-
-        <a  href="javascript:history.back()">
-             <img src="img/icona.png" alt="Confcommercio Verona" style="vertical-align:middle;"/>
-        </a>  
-  
-        </div>
-
-      </div> 
-      <div class="footer">
-        <h1 class="bar">&copy; <script>document.write(new Date().getFullYear()); 
-        
-        </script> Confcommercio Verona </h1>
-      </div>  
-      <div id="spacerhome">
-        </div> 
-        <div id="logo-wrap">
-          <img src="img/logo_big.png" alt="Confcommercio Verona" />
-        </div>
-     <!---   <div id="menu">
-     <form name="usersettings" action="http://www.confcommercioverona.it/app/usersettings.php" method="POST">   
-        <br>Ricevi notifiche
-              <button onclick="comincia('ds')">
-    wqqwqwwqqwqw
-</button>
-              <div class="onoffswitch">
-              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-              <label class="onoffswitch-label" for="myonoffswitch">
-                  <div class="onoffswitch-inner"></div>
-                  <div class="onoffswitch-switch"></div>
-              </label>
-            </div>
-            Credenziali di accesso<br><br>
-            Username: <input type="text" name="username" id="username"> <br>
-            Password: <input type="password" name="username" id="username"> <br><br>
-       </form>
-        <div>
-      </div>       
-      <div class="app"> 
-            <div id="deviceready" class="blink">
-                <p class="event listening"> </p>
-                <p class="event received"> </p>
-            </div>
-       </div>     
-    </div>  -->
-    
-    
+        </script> Confcommercio Verona </h1>      
+    </div>         
+    <div id="spacerhome">        
+    </div>          
+    <div id="logo-wrap">          
+      <img src="img/logo_big.png" alt="Confcommercio Verona" />        
+    </div>     
+    <!---   <div id="menu">
+         <form name="usersettings" action="http://www.confcommercioverona.it/app/usersettings.php" method="POST">   
+            <br>Ricevi notifiche
+                  <button onclick="comincia('ds')">
+        wqqwqwwqqwqw
+    </button>
+                  <div class="onoffswitch">
+                  <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                  <label class="onoffswitch-label" for="myonoffswitch">
+                      <div class="onoffswitch-inner"></div>
+                      <div class="onoffswitch-switch"></div>
+                  </label>
+                </div>
+                Credenziali di accesso<br><br>
+                Username: <input type="text" name="username" id="username"> <br>
+                Password: <input type="password" name="username" id="username"> <br><br>
+           </form>
+            <div>
+          </div>       
+          <div class="app"> 
+                <div id="deviceready" class="blink">
+                    <p class="event listening"> </p>
+                    <p class="event received"> </p>
+                </div>
+           </div>     
+        </div>  -->          
 <script type="text/javascript">
  
 // invoked when device is ready
@@ -177,16 +164,15 @@ navigator.notification.alert(entry.toURI(), null, 'Entry deleted');
 // retrieve a file and truncate it
 root.getFile('impostazioni_confcommercio.txt', {create: false}, remove_file, onFileSystemError);
 }
- 
-</script>
-<title>File Create/Remove</title>
-</head>
-<body onload="init()">
-<h3>window.device</h3>
-<p id="window.device.phonegap">[window.device.phonegap]</p>
- 
-<input type="button" value="Write File" onclick="writeFile();return false;" />
-<input type="button" value="Remove File" onclick="removeFile();return false;" />
-
-  </body>
+  
+</script> 
+    <title>File Create/Remove
+    </title>
+    </head>
+    <body onload="init()"><h3>window.device</h3>
+      <p id="window.device.phonegap">[window.device.phonegap]
+      </p>  
+      <input type="button" value="Write File" onclick="writeFile();return false;" />
+      <input type="button" value="Remove File" onclick="removeFile();return false;" />  
+    </body>
 </html>
