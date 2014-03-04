@@ -75,7 +75,7 @@
     function saveText(e) {
     var username = $('username').value,
         password = $('password').value,
-        ricevinotifiche = $("#ricevinotifiche").is(":checked"),
+        ricevinotifiche = $('ricevinotifiche').value,
         fail;
 
     dbEntries.push(username + '***' + password + '***'+ ricevinotifiche)
@@ -132,7 +132,12 @@ function readText() {
                // $('definitions').innerHTML = dbEntries.join('');
             
             document.getElementById('username').value=user;
-            document.getElementById('password').value=pass;
+            if (pass=="undefined"){
+              document.getElementById('password').value="";
+            }else{
+              document.getElementById('password').value=pass;
+            }
+            
             document.getElementById('ricevinotifiche').checked=not;
             $('definitions').innerHTML = "<br>Username:" +user + '<br>Password:' + pass + '<br>Notifiche:'+ not;
             }
