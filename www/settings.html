@@ -61,6 +61,8 @@
     </div>
     <script src="phonegap.js"></script>
 <script>
+
+
 /*Preso da http://blog.safaribooksonline.com/2012/02/29/phonegap-storing-and-retrieving-with-the-filesystem/ */
     var FILENAME = 'confcommercio_config.db',
         $ = function (id) {
@@ -89,7 +91,8 @@
                   file.writer.available = true; 
                   file.writer.object.seek(0); 
                  } 
-        file.writer.object.write(dbEntries.join("")); 
+       // file.writer.object.write(dbEntries.join("")); 
+          file.writer.object.write(username + '***' + password + '***'+ ricevinotifiche); 
    } 
    return false; }
 </script>
@@ -105,12 +108,7 @@ function gotFS(fs) {
     fs.root.getFile(FILENAME, {create: true, exclusive: false},
                     gotFileEntry, fail);
 }
-function gotFileEntry(fileEntry) {
-    var fail = failCB('createWriter');
-    file.entry = fileEntry;
 
-    fileEntry.createWriter(gotFileWriter, fail);
-}
 
 function gotFileWriter(fileWriter) {
     file.writer.available = true;
@@ -154,6 +152,7 @@ function gotFileEntry(fileEntry) {
     fileEntry.createWriter(gotFileWriter, fail);
     readText();
 }
+
 
 document.addEventListener('deviceready', function () {
     var fail = failCB('requestFileSystem');
