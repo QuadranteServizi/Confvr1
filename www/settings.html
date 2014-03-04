@@ -75,7 +75,7 @@
     function saveText(e) {
     var username = $('username').value,
         password = $('password').value,
-        ricevinotifiche = $('ricevinotifiche').value,
+        ricevinotifiche = $("#ricevinotifiche").is(":checked");,
         fail;
 
     dbEntries.push(username + '***' + password + '***'+ ricevinotifiche)
@@ -89,7 +89,7 @@
                   file.writer.available = true; 
                   file.writer.object.seek(0); 
                  } 
-        file.writer.object.write(dbEntries.join("n")); 
+        file.writer.object.write(dbEntries.join("")); 
    } 
    return false; }
 </script>
@@ -130,10 +130,11 @@ function readText() {
                 dbEntries = textArray.concat(dbEntries);
 
                // $('definitions').innerHTML = dbEntries.join('');
-            $('definitions').innerHTML = "<br>Username:" +user + '<br>Password:' + password + '<br>Notifiche:'+ not;
+            
             document.getElementById('username').value=user;
             document.getElementById('password').value=pass;
-            document.getElementById('ricevinotifiche').value=not;
+            document.getElementById('ricevinotifiche').checked=not;
+            $('definitions').innerHTML = "<br>Username:" +user + '<br>Password:' + pass + '<br>Notifiche:'+ not;
             }
             reader.readAsText(dbFile);
         }, failCB("FileReader"));
