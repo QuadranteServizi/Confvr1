@@ -123,10 +123,17 @@ function readText() {
             var reader = new FileReader();
             reader.onloadend = function (evt) {
                 var textArray = evt.target.result.split("***");
+                var user = textArray[0];
+                var pass = textArray[1];
+                var not = textArray[2];
 
                 dbEntries = textArray.concat(dbEntries);
 
-                $('definitions').innerHTML = dbEntries.join('');
+               // $('definitions').innerHTML = dbEntries.join('');
+            $('definitions').innerHTML = "<br>Username:" +user + '<br>Password:' + password + '<br>Notifiche:'+ not;
+            document.getElementById('username').value=user;
+            document.getElementById('password').value=pass;
+            document.getElementById('ricevinotifiche').value=not;
             }
             reader.readAsText(dbFile);
         }, failCB("FileReader"));
