@@ -39,20 +39,21 @@
     </head>
 <body>
     <form onsubmit="return saveText()" action="#">
-        <label for="name">Name</label><br>
-        <input id="name" /><br>
+        <label for="username">Username</label><br>
+        <input id="username" /><br>
 
-        <label for="desc">Description</label><br>
-        <input id="desc" /><br>
+        <label for="password">Password</label><br>
+        <input id="password" type="password" /><br>
 
-        <input type="submit" value="Save" />
+        <input type="submit" value="Salva" />
     </form>
 
     <dl id="definitions">
     </dl>
     <script src="phonegap.js"></script>
 <script>
-    var FILENAME = 'database_confcommercio.db',
+/*Preso da http://blog.safaribooksonline.com/2012/02/29/phonegap-storing-and-retrieving-with-the-filesystem/ */
+    var FILENAME = 'confcommercio_config.db',
         $ = function (id) {
             return document.getElementById(id);
         },
@@ -63,13 +64,13 @@
         dbEntries = [];
 
     function saveText(e) {
-    var name = $('name').value,
-        desc = $('desc').value,
+    var username = $('username').value,
+        password = $('password').value,
         fail;
 
-    dbEntries.push('' + name + '' + desc + '</dd>')
-    $('name').value = '';
-    $('desc').value = '';
+    dbEntries.push('' + username + '' + password + '</dd>')
+    $('username').value = '';
+    $('password').value = '';
     $('definitions').innerHTML = dbEntries.join('');
     if (file.writer.available) {
        file.writer.available = false;
@@ -103,6 +104,31 @@ function gotFileEntry(fileEntry) {
 function gotFileWriter(fileWriter) {
     file.writer.available = true;
     file.writer.object = fileWriter;
+}
+
+function readText() {
+    if (file.entry) {
+        file.entry.file(function (dbFile) {
+            var reader = new FileReader();
+            reader.onloadend = function (evt) {
+                var textArray = evt.target.result.split("n");
+
+                dbEntries = textArray.concat(dbEntries);
+
+                $('definitions').innerHTML = dbEntries.join('');
+            }
+            reader.readAsText(dbFile);
+        }, failCB("FileReader"));
+    }
+}
+
+
+function gotFileEntry(fileEntry) {
+    var fail = failCB('createWriter');
+    file.entry = fileEntry;
+
+    fileEntry.createWriter(gotFileWriter, fail);
+    readText();
 }
 
 document.addEventListener('deviceready', function () {
