@@ -77,7 +77,11 @@
     <script>
 
 
-        var element = document.getElementById('definitions');
+       
+
+
+ document.addEventListener('deviceready', function () {
+       var element = document.getElementById('definitions');
         element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
                             'Device Cordova: '  + device.cordova  + '<br />' +
                             'Device Platform: ' + device.platform + '<br />' +
@@ -91,7 +95,9 @@
 
             function closeDefinitions(){
                   document.getElementById("definitions").style.display="none";}
+    
 
+}, false);
 </script>
   </body>
 </html>
