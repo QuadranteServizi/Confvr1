@@ -40,15 +40,8 @@ var app = {
         var pushNotification = window.plugins.pushNotification;
         pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"1073127551296","ecb":"app.onNotificationGCM"});
 
-        
     },
-    
-    
-    
-    
-    
-    
-    
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
@@ -74,9 +67,9 @@ var app = {
                     //Quando il device è pronto lo inserisco nel database delle notifiche
                     var url='http://www.confcommercioverona.it/app/notify_newdevice.php?registrationId='+e.regid;
                     var ref = window.open(url, '_blank','hidden=yes');
-                    ref.addEventListener('loadstart', function() { /*alert('start: ' + event.url); */});
-                    ref.addEventListener('loadstop', function() { /*alert('stop: ' + event.url); */});
-                    ref.addEventListener('exit', function() { /*alert(event.type);*/ }); 
+                    ref.addEventListener('loadstart', function() {});
+                    ref.addEventListener('loadstop', function() {});
+                    ref.addEventListener('exit', function() {}); 
                     // close InAppBrowser after 5 seconds
                     setTimeout(function() {
                       ref.close();

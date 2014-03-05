@@ -89,26 +89,24 @@
                     file.writer.available = true; 
                     file.writer.object.seek(0); 
                    } 
-         // file.writer.object.write(dbEntries.join("")); 
             file.writer.object.write(username + '***' + password + '***'+ ricevinotifiche); 
-            
-            
-  
-             /* 
-              //Se non vuole le notifiche faccio un update sul DB
-               var url='http://www.confcommercioverona.it/app/notify_newdevice.php?notifiche=no&registrationId='+e.regid;       
-               var ref = window.open(url, '_blank','hidden=yes');
-               ref.addEventListener('loadstart', function() {});
-               ref.addEventListener('loadstop', function() {});
-               ref.addEventListener('exit', function() {}); 
-               // close InAppBrowser after 5 seconds
-               setTimeout(function() {
-                   ref.close();
-               }, 5000)
-                              */
-            $('definitions').innerHTML = "Impostazioni salvate con successo";
-          
 
+            $('definitions').innerHTML = "Impostazioni salvate con successo!";
+            var element = document.getElementById('definitions');
+        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
+                            'Device Cordova: '  + device.cordova  + '<br />' +
+                            'Device Platform: ' + device.platform + '<br />' +
+                            'Device UUID: '     + device.uuid     + '<br />' +
+                            'Device Model: '    + device.model    + '<br />' +
+                            'Device Version: '  + device.version  + '<br />';
+    
+
+          
+            window.setTimeout("closeDefinitions();", 5000);
+
+            function closeDefinitions(){
+                  document.getElementById("definitions").style.display=" none";
+            }
          
             
                 
@@ -145,8 +143,6 @@ function readText() {
                 var not = textArray[2];
 
                 dbEntries = textArray.concat(dbEntries);
-
-               // $('definitions').innerHTML = dbEntries.join('');
             
             document.getElementById('username').value=user;
             if (pass=="undefined"){
@@ -156,13 +152,6 @@ function readText() {
             }
             
             document.getElementById('ricevinotifiche').checked=not;
-            
-             alert (device.platform);
-           
-            
-            
-            
-            //$('definitions').innerHTML = "<br>Username:" +user + '<br>Password:' + pass + '<br>Notifiche:'+ not;
             }
             reader.readAsText(dbFile);
         }, failCB("FileReader"));
@@ -182,13 +171,7 @@ function gotFileEntry(fileEntry) {
 document.addEventListener('deviceready', function () {
     var fail = failCB('requestFileSystem');
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    $('definitions').innerHTML= 'Device Name: '     + device.name     + '<br />' + 
-                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
-                            'Device Platform: ' + device.platform + '<br />' + 
-                            'Device UUID: '     + device.uuid     + '<br />' + 
-                            'Device Version: '  + device.version  + '<br />';
-                            
-                            alert (device.platform);
+    
 
 }, false);
 </script>
