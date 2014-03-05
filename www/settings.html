@@ -75,45 +75,48 @@
         dbEntries = [];
 
     function saveText(e) {
-    var username = $('username').value,
-        password = $('password').value,
-        ricevinotifiche = $('ricevinotifiche').value,
-        fail;
-
-    dbEntries.push(username + '***' + password + '***'+ ricevinotifiche)
-  //  $('username').value = '';
-  //  $('password').value = '';
-  //  $('ricevinotifiche').value = '';
-    $('definitions').innerHTML = "Impostazioni salvate con successo";
-    if (file.writer.available) {
-       file.writer.available = false;
-       file.writer.object.onwriteend = function (evt) {
-                  file.writer.available = true; 
-                  file.writer.object.seek(0); 
-                 } 
-       // file.writer.object.write(dbEntries.join("")); 
-          file.writer.object.write(username + '***' + password + '***'+ ricevinotifiche); 
-          
-           alert('Device Name: '     + device.name     + '<br />' + 
-                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
-                            'Device Platform: ' + device.platform + '<br />' + 
-                            'Device UUID: '     + device.uuid     + '<br />' + 
-                            'Device Version: '  + device.version  + '<br />');
-
-           /* 
-            //Se non vuole le notifiche faccio un update sul DB
-             var url='http://www.confcommercioverona.it/app/notify_newdevice.php?notifiche=no&registrationId='+e.regid;       
-             var ref = window.open(url, '_blank','hidden=yes');
-             ref.addEventListener('loadstart', function() {});
-             ref.addEventListener('loadstop', function() {});
-             ref.addEventListener('exit', function() {}); 
-             // close InAppBrowser after 5 seconds
-             setTimeout(function() {
-                 ref.close();
-             }, 5000)
-                            */
-          
-          
+    
+      $('definitions').innerHTML = "Salvataggio in corso...";
+      var username = $('username').value,
+          password = $('password').value,
+          ricevinotifiche = $('ricevinotifiche').value,
+          fail;
+  
+      dbEntries.push(username + '***' + password + '***'+ ricevinotifiche)
+    //  $('username').value = '';
+    //  $('password').value = '';
+    //  $('ricevinotifiche').value = '';
+  
+      if (file.writer.available) {
+         file.writer.available = false;
+         file.writer.object.onwriteend = function (evt) {
+                    file.writer.available = true; 
+                    file.writer.object.seek(0); 
+                   } 
+         // file.writer.object.write(dbEntries.join("")); 
+            file.writer.object.write(username + '***' + password + '***'+ ricevinotifiche); 
+            
+            
+  
+             /* 
+              //Se non vuole le notifiche faccio un update sul DB
+               var url='http://www.confcommercioverona.it/app/notify_newdevice.php?notifiche=no&registrationId='+e.regid;       
+               var ref = window.open(url, '_blank','hidden=yes');
+               ref.addEventListener('loadstart', function() {});
+               ref.addEventListener('loadstop', function() {});
+               ref.addEventListener('exit', function() {}); 
+               // close InAppBrowser after 5 seconds
+               setTimeout(function() {
+                   ref.close();
+               }, 5000)
+                              */
+            $('definitions').innerHTML = "Impostazioni salvate con successo";
+            $('definitions').innerHTML =  'Device Name: '     + device.name     + '<br />' + 
+                              'Device PhoneGap: ' + device.phonegap + '<br />' + 
+                              'Device Platform: ' + device.platform + '<br />' + 
+                              'Device UUID: '     + device.uuid     + '<br />' + 
+                              'Device Version: '  + device.version  + '<br />';
+                
    } 
    return false; }
 </script>
