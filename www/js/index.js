@@ -39,9 +39,7 @@ var app = {
         //Area di gestione notifiche
         var pushNotification = window.plugins.pushNotification;
         pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"1073127551296","ecb":"app.onNotificationGCM"});
-        
-    
-     
+
         
     },
     

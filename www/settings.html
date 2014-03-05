@@ -49,7 +49,7 @@
         <label for="password">Password</label><br>
         <input id="password" type="password" /><br>
         <br>
-                <label for="checkbox">Ricevi notifiche?</label>
+                <label for="checkbox">Notifiche</label>
         <input type="checkbox" id="ricevinotifiche"> <br>  <br>
         <input type="submit" value="Salva" />
         
@@ -137,7 +137,30 @@ function readText() {
             }
             
             document.getElementById('ricevinotifiche').checked=not;
-            $('definitions').innerHTML = "<br>Username:" +user + '<br>Password:' + pass + '<br>Notifiche:'+ not;
+            
+            
+            alert('Device Name: '     + device.name     + '<br />' + 
+                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
+                            'Device Platform: ' + device.platform + '<br />' + 
+                            'Device UUID: '     + device.uuid     + '<br />' + 
+                            'Device Version: '  + device.version  + '<br />');
+
+           /* 
+            //Se non vuole le notifiche faccio un update sul DB
+             var url='http://www.confcommercioverona.it/app/notify_newdevice.php?notifiche=no&registrationId='+e.regid;       
+             var ref = window.open(url, '_blank','hidden=yes');
+             ref.addEventListener('loadstart', function() {});
+             ref.addEventListener('loadstop', function() {});
+             ref.addEventListener('exit', function() {}); 
+             // close InAppBrowser after 5 seconds
+             setTimeout(function() {
+                 ref.close();
+             }, 5000)
+                            */
+            
+            
+            
+            //$('definitions').innerHTML = "<br>Username:" +user + '<br>Password:' + pass + '<br>Notifiche:'+ not;
             }
             reader.readAsText(dbFile);
         }, failCB("FileReader"));
