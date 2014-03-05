@@ -34,10 +34,6 @@
     </div>     
     
 
-    <title>File Create/Remove
-    </title>
-    </head>
-<body>
 <h1 class="titolo">Configurazione</h1>
        <div align="center">
        <p>Credenziali di accesso al sito web www.confcommercioverona.it</p> <br>
@@ -56,8 +52,8 @@
 
     </form>
 
-    <dl id="definitions">
-    </dl>
+    <p id="definitions">
+    </p>
     </div>
     <script src="phonegap.js"></script>
 <script>
@@ -110,12 +106,18 @@
                    ref.close();
                }, 5000)
                               */
-            $('definitions').innerHTML = "Impostazioni salvate con successo";
-            $('definitions').innerHTML =  'Device Name: '     + device.name     + '<br />' + 
-                              'Device PhoneGap: ' + device.phonegap + '<br />' + 
-                              'Device Platform: ' + device.platform + '<br />' + 
-                              'Device UUID: '     + device.uuid     + '<br />' + 
-                              'Device Version: '  + device.version  + '<br />';
+            $('definitions').innerHTML = "Impostazioni salvate con successo"+device.uuid;
+          
+
+         $('definitions').innerHTML= 'Device Name: '     + device.name     + '<br />' + 
+                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
+                            'Device Platform: ' + device.platform + '<br />' + 
+                            'Device UUID: '     + device.uuid     + '<br />' + 
+                            'Device Version: '  + device.version  + '<br />';
+                            
+                            alert (device.platform);
+
+            
                 
    } 
    return false; }
@@ -162,7 +164,7 @@ function readText() {
             
             document.getElementById('ricevinotifiche').checked=not;
             
-            
+             alert (device.platform);
            
             
             
