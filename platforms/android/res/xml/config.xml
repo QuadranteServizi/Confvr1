@@ -47,4 +47,7 @@
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
+    <feature name="Device">
+    <param name="android-package" value="org.apache.cordova.Device" />
+</feature>
 </widget>
