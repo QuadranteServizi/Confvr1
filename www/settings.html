@@ -106,17 +106,10 @@
                    ref.close();
                }, 5000)
                               */
-            $('definitions').innerHTML = "Impostazioni salvate con successo"+device.uuid;
+            $('definitions').innerHTML = "Impostazioni salvate con successo";
           
 
-         $('definitions').innerHTML= 'Device Name: '     + device.name     + '<br />' + 
-                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
-                            'Device Platform: ' + device.platform + '<br />' + 
-                            'Device UUID: '     + device.uuid     + '<br />' + 
-                            'Device Version: '  + device.version  + '<br />';
-                            
-                            alert (device.platform);
-
+         
             
                 
    } 
@@ -189,6 +182,14 @@ function gotFileEntry(fileEntry) {
 document.addEventListener('deviceready', function () {
     var fail = failCB('requestFileSystem');
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    $('definitions').innerHTML= 'Device Name: '     + device.name     + '<br />' + 
+                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
+                            'Device Platform: ' + device.platform + '<br />' + 
+                            'Device UUID: '     + device.uuid     + '<br />' + 
+                            'Device Version: '  + device.version  + '<br />';
+                            
+                            alert (device.platform);
+
 }, false);
 </script>
 </body>
