@@ -52,7 +52,7 @@
 
     </form>
 
-    <p id="definitions">
+    <p id="definitions" style="display:none;">
     </p>
     </div>
     <script src="phonegap.js"></script>
@@ -72,7 +72,9 @@
 
     function saveText(e) {
     
+      document.getElementById("definitions").style.display="block";
       $('definitions').innerHTML = "Salvataggio in corso...";
+      
       var username = $('username').value,
           password = $('password').value,
           ricevinotifiche = $('ricevinotifiche').value,
@@ -106,15 +108,17 @@
 
             
 
-   } 
-   return false; }
-   
-   window.setTimeout("closeDefinitions();", 50000);
+   }
+    window.setTimeout("closeDefinitions();", 50000);
    $('definitions').innerHTML = "Impostazioni salvate con successo!";
 
             function closeDefinitions(){
                   document.getElementById("definitions").style.display="none";
             }
+    
+   return false; }
+   
+  
 </script>
 <script>
 var failCB = function (msg) {
