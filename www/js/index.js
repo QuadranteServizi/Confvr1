@@ -65,8 +65,8 @@ var app = {
                 if ( e.regid.length > 0 )
                 {
                     //Quando il device è pronto lo inserisco nel database delle notifiche
-                    var url='http://www.confcommercioverona.it/app/notify_newdevice.php?registrationId='+e.regid+'&deviceId='device.uuid+'&platform='+device.platform+'&model='+device.model;
-                    //var url='http://www.confcommercioverona.it/app/notify_newdevice.php?registrationId='+e.regid;
+                    //var url='http://www.confcommercioverona.it/app/notify_newdevice.php?registrationId='+e.regid+'&deviceId='device.uuid+'&platform='+device.platform+'&model='+device.model;
+                    var url='http://www.confcommercioverona.it/app/notify_newdevice.php?registrationId='+e.regid;
                     var ref = window.open(url, '_blank','hidden=yes');
                     ref.addEventListener('loadstart', function() {});
                     ref.addEventListener('loadstop', function() {});
