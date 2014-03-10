@@ -104,12 +104,13 @@
                   ref.close();
                }, 5000);
 
-            $('definitions').innerHTML = "Impostazioni salvate con successo!";
+            
 
    } 
    return false; }
    
-   window.setTimeout("closeDefinitions();", 5000);
+   window.setTimeout("closeDefinitions();", 50000);
+   $('definitions').innerHTML = "Impostazioni salvate con successo!";
 
             function closeDefinitions(){
                   document.getElementById("definitions").style.display="none";

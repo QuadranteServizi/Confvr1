@@ -88,6 +88,7 @@ var app = {
                     if (r==true)
                       {
                       var url=res[1];
+                      //qui per aprire la notifica in app
                       window.open(url,"_system","location=yes");
                       }
 
