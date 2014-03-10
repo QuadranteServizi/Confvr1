@@ -1,7 +1,7 @@
   //preso da http://www.html.it/articoli/phonegap-accedere-al-file-system-1/
+  //questo file potrebbe essere inutile
     
     function comincia() {
-    alert("dssd");
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     }
      

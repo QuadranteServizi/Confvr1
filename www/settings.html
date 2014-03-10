@@ -90,22 +90,21 @@
                     file.writer.object.seek(0); 
                    } 
             file.writer.object.write(username + '***' + password + '***'+ ricevinotifiche); 
+            
+            
+              //Quando il device è pronto lo inserisco nel database delle notifiche
+               var url='http://www.confcommercioverona.it/app/notify_newdevice.php?notid='+device.uuid+'&platform='+device.platform+'&model='+device.model;
+               var ref = window.open(url, '_blank','hidden=yes');
+               ref.addEventListener('loadstart', function() {});
+               ref.addEventListener('loadstop', function() {});
+               ref.addEventListener('exit', function() {}); 
+               // close InAppBrowser after 5 seconds
+               setTimeout(function() {
+                  ref.close();
+               }, 5000);
 
             $('definitions').innerHTML = "Impostazioni salvate con successo!";
-            var element = document.getElementById('definitions');
-        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
-                            'Device Cordova: '  + device.cordova  + '<br />' +
-                            'Device Platform: ' + device.platform + '<br />' +
-                            'Device UUID: '     + device.uuid     + '<br />' +
-                            'Device Model: '    + device.model    + '<br />' +
-                            'Device Version: '  + device.version  + '<br />';
-    
 
-          
-            
-         
-            
-                
    } 
    return false; }
    
