@@ -2,7 +2,7 @@
 <widget id="com.confcommercioverona" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Confcommercio Verona</name>
     <description>
-        App per smartphone di Confcommercio Verona
+        App per smartphone Android, iPhone e iPad di Confcommercio Verona
     </description>
     <author email="ced@quadranteservizi.it" href="http://www.quadranteservizi.it">
         Quadrante Servizi Srl

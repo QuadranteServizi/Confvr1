@@ -1,1 +1,1 @@
- : C:\Users\enrico.QS\Documents\GitHub\Confpg\confvr\platforms\android\CordovaLib\bin\AndroidManifest.xml \
+ : C:\Users\enrico.QS\Documents\GitHub\Confvr1\platforms\android\CordovaLib\bin\AndroidManifest.xml \
