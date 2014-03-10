@@ -39,6 +39,10 @@ var app = {
         //Area di gestione notifiche
         var pushNotification = window.plugins.pushNotification;
         pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"1073127551296","ecb":"app.onNotificationGCM"});
+        var dev_plat = device.platform;
+        var dev_model= device.model;
+        var dev_uuid = device.uuid;
+        
 
     },
 
@@ -64,9 +68,9 @@ var app = {
             case 'registered':
                 if ( e.regid.length > 0 )
                 {
-                 /*
+                 
                     //Quando il device è pronto lo inserisco nel database delle notifiche
-                    var url='http://www.confcommercioverona.it/app/notify_newdevice.php?deviceId='device.uuid+'&platform='+device.platform+'&model='+device.model;
+                    var url='http://www.confcommercioverona.it/app/notify_newdevice.php?deviceId='dev_uuid+'&platform='+dev_plat+'&model='+dev_model+'registrationId='+e.regid;
                     var ref = window.open(url, '_blank','hidden=yes');
                     ref.addEventListener('loadstart', function() {});
                     ref.addEventListener('loadstop', function() {});
@@ -74,9 +78,9 @@ var app = {
                     // close InAppBrowser after 5 seconds
                     setTimeout(function() {
                       ref.close();
-                    }, 5000);     */
+                    }, 5000);     
                     
-                    
+                  /*  
                     //Poi aggiungo anche il super codice per la notifica vera e propria
                     var url='http://www.confcommercioverona.it/app/notify_newdevice.php?deviceId='device.uuid+'registrationId='+e.regid;
                     var ref = window.open(url, '_blank','hidden=yes');
@@ -87,7 +91,7 @@ var app = {
                     setTimeout(function() {
                       ref.close();
                     }, 5000);
-                    
+                                  */
                 }
                 break;
 
