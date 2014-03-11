@@ -87,6 +87,10 @@
                     }
                     reader.readAsText(dbFile);
                 }, failCB("FileReader"));
+            }else{
+            //file non esiste
+            window.location.replace("login.html");
+            
             }
         }
         
