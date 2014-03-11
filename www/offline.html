@@ -27,7 +27,8 @@
               checkConnection();
           }
           
-          document.addEventListener("offline", onOffline, false);
+          
+          document.addEventListener("online", onOnline, false);
           
           function checkConnection() {
               var networkState = navigator.network.connection.type;
@@ -44,8 +45,9 @@
              //    alert('Connection type: ' + states[networkState]);
           }
           
-          function onOffline() {
-              window.location.replace("offline.html");
+          
+          function onOnline() {
+              window.location.replace("index.html");
           }
           
         </script>
@@ -68,39 +70,15 @@
         <div id="logo-wrap">
           <img src="img/logo_big.png" alt="Confcommercio Verona" />
         </div>
-        <div id="menu">
-        <ul>
-        
-          <li>
-          <a href="rassegna-stampa.html">Rassegna Stampa</a>
-          </li>
-          
-          <li>
-          <a href="video.html">Video</a>
-          </li> 
-          <li>
-          <a href="news-dal-sito.html">News dal sito</a>
-          </li>
-          <li>
-          <a href="corsi.html">Corsi di formazione</a>
-          </li>
-          <li>
-          <a href="il-commercio-veronese.html">Il Commercio Veronese</a>
-          </li>
-          <li>
-          <a href="prime-pagine.html">Prime Pagine Quotidiani</a>
-          </li>
-         
-        </ul>
-        <div>
-      </div>       
+   
+        <p align="center"><br>Questa applicazione ha bisogno di essere collegata ad internet per funzionare. <br> Controlla le tue impostazioni.</p> 
       <div class="app"> 
             <div id="deviceready" class="blink">
                 <p class="event listening"> </p>
                 <p class="event received"> </p>
             </div>
        </div>     
-    </div>
+    
       <p id="debug">
     </p> 
 
