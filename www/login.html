@@ -149,12 +149,10 @@ function readText() {
                 var user = textArray[0];
                 var pass = textArray[1];
                 var not = textArray[2];
-                alert(user);
                 
 
                 dbEntries = textArray.concat(dbEntries);
-                 alert(user);
-                  alert("visto?");
+
             document.getElementById('username').value=user;
             if (pass=="undefined"){
               document.getElementById('password').value="";
@@ -163,11 +161,7 @@ function readText() {
             }
             
             document.getElementById('ricevinotifiche').checked=not;
-            
-            
-             alert(user);
-            
-            alert(pass);
+
             //Cripto username e password per l'invio
             var key = "cd027Kgh";
             var crp_usr = stringToHex(des(key, user, 1, 0));
