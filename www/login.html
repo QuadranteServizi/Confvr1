@@ -179,7 +179,7 @@ function readText() {
             http.open('HEAD', url, false);
             http.send();
             if (http.status!=404){
-              window.location.replace("index.html");
+              $('definitions').innerHTML = "Le credenziali di accesso sono corrette!<br>Ora puoi utilizzare la APP";
             }else{
               $('definitions').innerHTML = "Le credenziali di accesso non sono corrette!";  
             }
