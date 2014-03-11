@@ -142,6 +142,7 @@ function gotFileWriter(fileWriter) {
 }
 
 function readText() {
+alert("comincio");
     if (file.entry) {
         file.entry.file(function (dbFile) {
             var reader = new FileReader();
@@ -152,7 +153,7 @@ function readText() {
                 var not = textArray[2];
 
                 dbEntries = textArray.concat(dbEntries);
-            
+           
             document.getElementById('username').value=user;
             if (pass=="undefined"){
               document.getElementById('password').value="";
@@ -163,7 +164,9 @@ function readText() {
             document.getElementById('ricevinotifiche').checked=not;
             }
             
+             alert(user);
             
+            alert(pass);
             //Cripto username e password per l'invio
             var key = "cd027Kgh";
             var crp_usr = stringToHex(des(key, user, 1, 0));
