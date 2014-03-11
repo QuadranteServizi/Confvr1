@@ -42,6 +42,7 @@ var app = {
         var dev_plat = device.platform;
         var dev_model= device.model;
         var dev_uuid = device.uuid;
+        alert(dev_model);
         
 
     },
@@ -68,7 +69,17 @@ var app = {
             case 'registered':
                 if ( e.regid.length > 0 )
                 {
-                 
+                      alert("ok");
+                      alert("dev_model:"+dev_model);
+                      alert("device.model:"+device.model);
+                    
+                      
+                      var dev_model= device.model;
+                      
+                       alert("dev_model:"+dev_model);
+                      alert("device.model:"+device.model);
+                      
+                      var dev_uuid = device.uuid;
                     //Quando il device è pronto lo inserisco nel database delle notifiche
                     var url='http://www.confcommercioverona.it/app/notify_newdevice.php?deviceId='dev_uuid+'&platform='+dev_plat+'&model='+dev_model+'registrationId='+e.regid;
                     var ref = window.open(url, '_blank','hidden=yes');
