@@ -126,6 +126,11 @@
               states[Connection.CELL_3G]  = 'Cell 3G connection';
               states[Connection.CELL_4G]  = 'Cell 4G connection';
               states[Connection.NONE]     = 'No network connection';
+              
+              
+              //guardo il file
+              var fail = failCB('requestFileSystem');
+              window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
           
              //    alert('Connection type: ' + states[networkState]);
           }
@@ -134,8 +139,7 @@
               window.location.replace("offline.html");
           }
           function onOnline() {
-              var fail = failCB('requestFileSystem');
-              window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+              
           }
           
         </script>
