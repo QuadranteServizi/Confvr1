@@ -11,7 +11,7 @@
         
         <script type="text/javascript" src="PushNotification.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-    
+        <script type="text/javascript" src="js/des.js"></script>    
          <script type="text/javascript">
                     app.initialize();
                   
@@ -51,9 +51,7 @@
         }
 
         function readText() {
-                   alert("qui");
             if (file.entry) {
-            alert("quo");
                 file.entry.file(function (dbFile) {
                     var reader = new FileReader();
                     reader.onloadend = function (evt) {
@@ -61,8 +59,7 @@
                         var user = textArray[0];
                         var pass = textArray[1];
                         var not = textArray[2];
-                        alert("qua");
-                        alert(user);
+
         
                         dbEntries = textArray.concat(dbEntries);
         
