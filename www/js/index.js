@@ -42,7 +42,7 @@ var app = {
         var dev_plat = device.platform;
         var dev_model= device.model;
         var dev_uuid = device.uuid;
-        alert(dev_model);
+       
         
 
     },

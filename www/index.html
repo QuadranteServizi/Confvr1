@@ -15,6 +15,40 @@
                     app.initialize();
                   
         </script>
+        <script type="text/javascript" charset="utf-8">
+
+          // Wait for PhoneGap to load
+          // 
+          document.addEventListener("deviceready", onDeviceReady, false);
+          
+          // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+          //
+          function onDeviceReady() {
+              checkConnection();
+          }
+          
+          document.addEventListener("offline", onOffline, false);
+          
+          function checkConnection() {
+              var networkState = navigator.network.connection.type;
+          
+              var states = {};
+              states[Connection.UNKNOWN]  = 'Unknown connection';
+              states[Connection.ETHERNET] = 'Ethernet connection';
+              states[Connection.WIFI]     = 'WiFi connection';
+              states[Connection.CELL_2G]  = 'Cell 2G connection';
+              states[Connection.CELL_3G]  = 'Cell 3G connection';
+              states[Connection.CELL_4G]  = 'Cell 4G connection';
+              states[Connection.NONE]     = 'No network connection';
+          
+              alert('Connection type: ' + states[networkState]);
+          }
+          
+          function onOffline() {
+              alert("Sei offline!");
+          }
+          
+        </script>
     </head> 
     <body class="corpo">
      <div class="header">
@@ -25,11 +59,6 @@
         </a>  
   
         </div>
-         <!--<div id="settingsbutton">
-           <a  href="javascript:history.back()">&nbsp; 
-         <img src="img/settings.png" alt="Impostazioni" style="vertical-align:middle;"/>
-         </a>    
-        </div>-->
       </div> 
       <div class="footer">
         <h1 class="bar">&copy; <script>document.write(new Date().getFullYear())</script> Confcommercio Verona </h1>
