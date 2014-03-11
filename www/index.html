@@ -22,6 +22,8 @@
           e in caso positivo permette l'utilizzo dell'APP
             in caso negativo rimanda alla pagina delle impostazioni
         */
+        var FILENAME = 'confcommercio_config.db';
+        
         var failCB = function (msg) {
             return function () {
                 alert('[FAIL] ' + msg);
