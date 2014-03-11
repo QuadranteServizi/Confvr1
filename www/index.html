@@ -11,6 +11,7 @@
         
         <script type="text/javascript" src="PushNotification.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+    
          <script type="text/javascript">
                     app.initialize();
                   
@@ -28,6 +29,7 @@
           }
           
           document.addEventListener("offline", onOffline, false);
+          document.addEventListener("online", onOnline, false);
           
           function checkConnection() {
               var networkState = navigator.network.connection.type;
@@ -46,6 +48,9 @@
           
           function onOffline() {
               window.location.replace("offline.html");
+          }
+          function onOnline() {
+              window.location.replace("login.html");
           }
           
         </script>
