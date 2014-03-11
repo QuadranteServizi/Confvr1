@@ -41,8 +41,9 @@
         }
 
         function readText() {
-        
+                   alert("qui");
             if (file.entry) {
+            alert("quo");
                 file.entry.file(function (dbFile) {
                     var reader = new FileReader();
                     reader.onloadend = function (evt) {
@@ -50,7 +51,8 @@
                         var user = textArray[0];
                         var pass = textArray[1];
                         var not = textArray[2];
-                        
+                        alert("qua");
+                        alert(user);
         
                         dbEntries = textArray.concat(dbEntries);
         
@@ -87,10 +89,6 @@
                     }
                     reader.readAsText(dbFile);
                 }, failCB("FileReader"));
-            }else{
-            //file non esiste
-            window.location.replace("login.html");
-            
             }
         }
         
