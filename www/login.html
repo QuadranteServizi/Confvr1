@@ -144,7 +144,9 @@ function gotFileWriter(fileWriter) {
 function readText() {
 alert("comincio");
     if (file.entry) {
+    alert("comincio2");
         file.entry.file(function (dbFile) {
+          alert("comincio3");
             var reader = new FileReader();
             reader.onloadend = function (evt) {
                 var textArray = evt.target.result.split("***");
