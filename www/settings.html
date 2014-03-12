@@ -46,7 +46,7 @@
         <input id="password" type="password" /><br>
         <br>
                 <label for="checkbox">Notifiche</label>
-        <input type="checkbox" id="ricevinotifiche"> <br>  <br>
+        <input type="checkbox" id="ricevinotifiche" checked> <br>  <br>
         <input type="submit" value="Salva" />
         
 
@@ -151,13 +151,17 @@ function readText() {
                 dbEntries = textArray.concat(dbEntries);
             
             document.getElementById('username').value=user;
-            if (pass=="undefined"){
+           if (typeof pass === 'undefined'){
               document.getElementById('password').value="";
             }else{
               document.getElementById('password').value=pass;
             }
             
-            document.getElementById('ricevinotifiche').checked=not;
+            if (typeof not === 'undefined'){
+              document.getElementById('ricevinotifiche').checked="off";
+            }else{
+              document.getElementById('ricevinotifiche').checked=not; 
+            }
             }
             reader.readAsText(dbFile);
         }, failCB("FileReader"));
