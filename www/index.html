@@ -71,7 +71,9 @@
                     }
 
                     
-                    if(user && pass){
+                    if(user==="" && pass===""){
+                       window.location.replace("login.html");
+                    }else{
                       //Cripto username e password per l'invio
                       var key = "cd027Kgh";
                       var crp_usr = stringToHex(des(key, user, 1, 0));
@@ -89,9 +91,7 @@
                       http.send();
                       if (http.status==404){
                         window.location.replace("login.html");
-                      }
-                    }else{
-                       window.location.replace("login.html");
+                      }   
                     }
                     reader.readAsText(dbFile);
                 }, failCB("FileReader"));
