@@ -65,10 +65,14 @@
                         pass = textArray[1];
                         not = textArray[2];
 
+                        alert("user:"+user);
+                        alert("pass:"+pass);
         
                     dbEntries = textArray.concat(dbEntries);
 
                     }
+                    alert("user:"+user);
+                    alert("pass:"+pass);
                     
                     if(user!="" && pass!=""){
                       //Cripto username e password per l'invio
@@ -86,16 +90,12 @@
                       
                       http.open('HEAD', url, false);
                       http.send();
-                      alert("Status: "+http.status);
                       if (http.status==404){
-                        alert("giro 1");
                         window.location.replace("login.html");
                       }else{
-                         alert("giro 2");
                         //$('definitions').innerHTML = "Le credenziali di accesso sono corrette!";  
                       }
                     }else{
-                        alert("giro 3"); //arriviamo sempre qui
                        window.location.replace("login.html");
                     }
                     reader.readAsText(dbFile);
