@@ -86,13 +86,16 @@
                       
                       http.open('HEAD', url, false);
                       http.send();
+                      alert("Status: "+http.status);
                       if (http.status==404){
+                        alert("giro 1");
                         window.location.replace("login.html");
                       }else{
-                      
+                         alert("giro 2");
                         //$('definitions').innerHTML = "Le credenziali di accesso sono corrette!";  
                       }
                     }else{
+                        alert("giro 3");
                        window.location.replace("login.html");
                     }
                     reader.readAsText(dbFile);
@@ -122,7 +125,6 @@
               var fail = failCB('requestFileSystem');
               window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
           
-             //    alert('Connection type: ' + states[networkState]);
           }
           
           function onOffline() {
