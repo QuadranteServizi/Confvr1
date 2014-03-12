@@ -70,10 +70,8 @@
 
                     }
 
-                    alert("user:" + (user!=""));
-                    alert("pass: " + (pass!=""));
                     
-                    if(user!="" && pass!=""){
+                    if(user && pass){
                       //Cripto username e password per l'invio
                       var key = "cd027Kgh";
                       var crp_usr = stringToHex(des(key, user, 1, 0));
@@ -93,7 +91,6 @@
                         window.location.replace("login.html");
                       }
                     }else{
-                      alert("io vado eh..");
                        window.location.replace("login.html");
                     }
                     reader.readAsText(dbFile);
