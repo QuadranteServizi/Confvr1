@@ -179,8 +179,11 @@ function readText() {
             http.open('HEAD', url, false);
             http.send();
             if (http.status!=404){
+              document.getElementById("definitions").style.display="block";
               $('definitions').innerHTML = "Le credenziali di accesso sono corrette!<br>Ora puoi utilizzare la APP";
+              setTimeout(function() {window.location.replace("index.html");}, 1000);
             }else{
+              document.getElementById("definitions").style.display="block";
               $('definitions').innerHTML = "Le credenziali di accesso non sono corrette!";  
             }
             }
