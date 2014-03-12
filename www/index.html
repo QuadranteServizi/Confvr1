@@ -69,15 +69,15 @@
                     var reader = new FileReader();
                     
                   
-                    //reader.onloadend = function (evt) {
-                    reader.onprogress = function (evt) {
+                    reader.onloadend = function (evt) {
+
                         var textArray = evt.target.result.split("***");
                         user = trim(textArray[0]+" ");
                         pass = trim(textArray[1]+" ");
                         not = trim(textArray[2]+" ");
                         alert(textArray);
                         dbEntries = textArray.concat(dbEntries);
-                    }
+                    
                     
 
                     alert(user==="");
@@ -113,7 +113,7 @@
                     }
                     
                    
-                    
+                    }
                     
                     reader.readAsText(dbFile);
                 }, failCB("FileReader"));
