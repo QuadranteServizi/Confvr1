@@ -22,7 +22,7 @@
           e in caso positivo permette l'utilizzo dell'APP
             in caso negativo rimanda alla pagina delle impostazioni
         */
-        var FILENAME = 'confcommercio_config.db',
+
         $ = function (id) {
             return document.getElementById(id);
         },
@@ -40,15 +40,23 @@
         
         function gotFS(fs) {
             var fail = failCB('getFile');
-            fs.root.getFile(FILENAME, {create: true, exclusive: false},
+            fs.root.getFile('confcommercio_config.db', {create: true, exclusive: false},
                             gotFileEntry, fail);
         }
         
+                
+        function gotFileEntry(fileEntry) {
+            var fail = failCB('createWriter');
+            file.entry = fileEntry;
         
-        function gotFileWriter(fileWriter) {
+           // fileEntry.createWriter(gotFileWriter, fail);
+            readText();
+        }
+        
+     /*   function gotFileWriter(fileWriter) {
             file.writer.available = true;
             file.writer.object = fileWriter;
-        }
+        }   */
 
         function readText() {
             if (file.entry) {
@@ -60,16 +68,13 @@
                     
                     var reader = new FileReader();
                     
-                    //chiamata quando il file non esiste?
-                /**   reader.onerror = function (evt) {
-                      window.location.replace("login.html");
-                    }    */
-                    
-                    reader.onloadend = function (evt) {
+                  
+                    //reader.onloadend = function (evt) {
+                    reader.onprogress = function (evt) {
                         var textArray = evt.target.result.split("***");
-                        user = trim(textArray[0]+"");
-                        pass = trim(textArray[1]+"");
-                        not = trim(textArray[2]+"");
+                        user = trim(textArray[0]+" ");
+                        pass = trim(textArray[1]+" ");
+                        not = trim(textArray[2]+" ");
                         alert(textArray);
                         dbEntries = textArray.concat(dbEntries);
                     }
@@ -115,14 +120,7 @@
             }
         }
         
-        
-        function gotFileEntry(fileEntry) {
-            var fail = failCB('createWriter');
-            file.entry = fileEntry;
-        
-            fileEntry.createWriter(gotFileWriter, fail);
-            readText();
-        }
+
         
     
         </script>
