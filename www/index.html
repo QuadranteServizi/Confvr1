@@ -61,9 +61,9 @@
                     var reader = new FileReader();
                     reader.onloadend = function (evt) {
                         var textArray = evt.target.result.split("***");
-                        user = trim(textArray[0]);
-                        pass = trim(textArray[1]);
-                        not = trim(textArray[2]);
+                        user = trim(textArray[0]+"");
+                        pass = trim(textArray[1]+"");
+                        not = trim(textArray[2]+"");
 
         
                     dbEntries = textArray.concat(dbEntries);
