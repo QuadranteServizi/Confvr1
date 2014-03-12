@@ -68,7 +68,7 @@
         
                     dbEntries = textArray.concat(dbEntries);
 
-                    }
+                    
 
                     alert(user==="");
                     alert(pass==="");
@@ -101,6 +101,10 @@
                         window.location.replace("login.html");
                       }   
                     }
+                    
+                    }
+                    
+                    
                     reader.readAsText(dbFile);
                 }, failCB("FileReader"));
             }
