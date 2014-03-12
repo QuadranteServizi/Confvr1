@@ -70,8 +70,16 @@
 
                     }
 
+                    alert(user==="");
+                    alert(pass==="");
                     
-                    if(user==="" && pass===""){
+                    alert(user);
+                    alert(pass);
+                    
+                     alert(user.length);
+                      alert(pass.length);
+                    
+                    if(user.length==0 && pass.length==0){
                        window.location.replace("login.html");
                     }else{
                       //Cripto username e password per l'invio
