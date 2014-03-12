@@ -89,7 +89,8 @@
                       if (http.status==404){
                         window.location.replace("login.html");
                       }else{
-                        //$('definitions').innerHTML = "Le credenziali di accesso non sono corrette!";  
+                      
+                        //$('definitions').innerHTML = "Le credenziali di accesso sono corrette!";  
                       }
                     }else{
                        window.location.replace("login.html");
@@ -111,23 +112,12 @@
         
         <script type="text/javascript" charset="utf-8">
 
-          document.addEventListener("deviceready", checkConnection, false);
+          document.addEventListener("deviceready", checkLogin, false);
           document.addEventListener("offline", onOffline, false);
           document.addEventListener("online", onOnline, false);
           
-          function checkConnection() {
-              var networkState = navigator.network.connection.type;
-          
-              var states = {};
-              states[Connection.UNKNOWN]  = 'Unknown connection';
-              states[Connection.ETHERNET] = 'Ethernet connection';
-              states[Connection.WIFI]     = 'WiFi connection';
-              states[Connection.CELL_2G]  = 'Cell 2G connection';
-              states[Connection.CELL_3G]  = 'Cell 3G connection';
-              states[Connection.CELL_4G]  = 'Cell 4G connection';
-              states[Connection.NONE]     = 'No network connection';
-              
-              
+          function checkLogin() {
+                            
               //guardo il file
               var fail = failCB('requestFileSystem');
               window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
