@@ -61,18 +61,17 @@
                     var reader = new FileReader();
                     reader.onloadend = function (evt) {
                         var textArray = evt.target.result.split("***");
-                        user = textArray[0];
-                        pass = textArray[1];
-                        not = textArray[2];
+                        user = trim(textArray[0]);
+                        pass = trim(textArray[1]);
+                        not = trim(textArray[2]);
 
-                        alert("user:"+user);
-                        alert("pass:"+pass);
         
                     dbEntries = textArray.concat(dbEntries);
 
                     }
-                    alert("user:"+user);
-                    alert("pass:"+pass);
+
+                    alert("user:" + (user!=""));
+                    alert("pass: " + (pass!=""));
                     
                     if(user!="" && pass!=""){
                       //Cripto username e password per l'invio
@@ -92,10 +91,9 @@
                       http.send();
                       if (http.status==404){
                         window.location.replace("login.html");
-                      }else{
-                        //$('definitions').innerHTML = "Le credenziali di accesso sono corrette!";  
                       }
                     }else{
+                      alert("io vado eh..");
                        window.location.replace("login.html");
                     }
                     reader.readAsText(dbFile);
