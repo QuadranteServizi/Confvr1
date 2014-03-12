@@ -59,15 +59,20 @@
                     var not="";
                     
                     var reader = new FileReader();
+                    
+                    //chiamata quando il file non esiste?
+                    reader.onerror = function (evt) {
+                      window.location.replace("login.html");
+                    }
+                    
                     reader.onloadend = function (evt) {
                         var textArray = evt.target.result.split("***");
                         user = trim(textArray[0]+"");
                         pass = trim(textArray[1]+"");
                         not = trim(textArray[2]+"");
-
-        
-                    dbEntries = textArray.concat(dbEntries);
-
+                        
+                        dbEntries = textArray.concat(dbEntries);
+                    }
                     
 
                     alert(user==="");
@@ -102,7 +107,7 @@
                       }   
                     }
                     
-                    }
+                   
                     
                     
                     reader.readAsText(dbFile);
