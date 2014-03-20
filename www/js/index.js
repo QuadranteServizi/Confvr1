@@ -39,10 +39,6 @@ var app = {
         //Area di gestione notifiche
         var pushNotification = window.plugins.pushNotification;
         pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"1073127551296","ecb":"app.onNotificationGCM"});
-
-       
-        
-
     },
 
     // Update DOM on a Received Event
@@ -78,19 +74,8 @@ var app = {
                     setTimeout(function() {
                       ref.close();
                     }, 5000);     
-                    
-                  /*  
-                    //Poi aggiungo anche il super codice per la notifica vera e propria
-                    var url='http://www.confcommercioverona.it/app/notify_newdevice.php?deviceId='device.uuid+'registrationId='+e.regid;
-                    var ref = window.open(url, '_blank','hidden=yes');
-                    ref.addEventListener('loadstart', function() {});
-                    ref.addEventListener('loadstop', function() {});
-                    ref.addEventListener('exit', function() {}); 
-                    // close InAppBrowser after 5 seconds
-                    setTimeout(function() {
-                      ref.close();
-                    }, 5000);
-                                  */
+
+
                 }
                 break;
 
@@ -104,9 +89,10 @@ var app = {
                     var r=confirm(res[0]);
                     if (r==true)
                       {
-                      var url=res[1];
+                      
+                      var notify_news_id=res[1]; //  id del contenuto joomla da notificare
                       //qui per aprire la notifica in app
-                      window.open(url,"_system","location=yes");
+                      window.open("apri.html?notify_id="+notify_news_id,"_self","location=yes");
                       }
 
                 break;
