@@ -93,6 +93,11 @@
                    } 
             file.writer.object.write(username + '***' + password + '***'+ ricevinotifiche); 
             
+            alert(ricevinotifiche);
+            alert(typeof ricevinotifiche);
+            if (typeof ricevinotifiche === 'undefined'){
+                alert(typeof ricevinotifiche);
+            }
             if(ricevinotifiche==''){ricevinotifiche='off';}
             
               //Aggiorno lo stato delle notifiche sul db

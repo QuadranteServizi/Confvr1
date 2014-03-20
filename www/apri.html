@@ -81,7 +81,12 @@
     xmlhttp.open("GET","http://www.confcommercioverona.it/app/getrss.php?q=corsi&corsi_id="+corsi_id+"",true);
   }
   if (notify_id){  
-    xmlhttp.open("GET","http://www.confcommercioverona.it/app/getrss.php?q=news&news_id="+notify_id+"",true);
+    if(notify_id.substring(0,6)=="corso-"){
+      xmlhttp.open("GET","http://www.confcommercioverona.it/app/getrss.php?q=corsi&corsi_id="+notify_id.substring(6)+"",true);
+    }else{
+      xmlhttp.open("GET","http://www.confcommercioverona.it/app/getrss.php?q=news&news_id="+notify_id+"",true);
+    } 
+    
   }
   
   xmlhttp.send();
