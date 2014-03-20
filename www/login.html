@@ -113,6 +113,7 @@
 
    $('definitions').innerHTML = "Impostazioni salvate con successo!";
    setTimeout(function() {document.getElementById("definitions").style.display="none";}, 2000);
+   window.location = "index.html";
 
      
     
@@ -154,13 +155,17 @@ function readText() {
                 dbEntries = textArray.concat(dbEntries);
 
             document.getElementById('username').value=user;
-            if (pass=="undefined"){
+           if (typeof pass === 'undefined'){
               document.getElementById('password').value="";
             }else{
               document.getElementById('password').value=pass;
             }
             
-            document.getElementById('ricevinotifiche').checked=not;
+            if (typeof not === 'undefined'){
+              document.getElementById('ricevinotifiche').checked="off";
+            }else{
+              document.getElementById('ricevinotifiche').checked=not; 
+            }
 
             //Cripto username e password per l'invio
             var key = "cd027Kgh";
