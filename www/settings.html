@@ -112,6 +112,7 @@
 
    $('definitions').innerHTML = "Impostazioni salvate con successo!";
    setTimeout(function() {document.getElementById("definitions").style.display="none";}, 2000);
+   window.location = "index.html";
 
      
     
@@ -149,7 +150,9 @@ function readText() {
                 var not = textArray[2];
 
                 dbEntries = textArray.concat(dbEntries);
-            
+                alert(user);
+                alert(pass);
+                alert(not);
             document.getElementById('username').value=user;
            if (typeof pass === 'undefined'){
               document.getElementById('password').value="";
