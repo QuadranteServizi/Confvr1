@@ -36,9 +36,19 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         
-        //Area di gestione notifiche
         var pushNotification = window.plugins.pushNotification;
-        pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"1073127551296","ecb":"app.onNotificationGCM"});
+        
+        if (device.platform == 'android' || device.platform == 'Android') {
+            //Area di gestione notifiche
+            
+            pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"1073127551296","ecb":"app.onNotificationGCM"});
+        }
+        else {
+            //se è IOS
+            pushNotification.register(this.tokenHandler,this.errorHandler,   {"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
+        }
+        
+        
     },
 
     // Update DOM on a Received Event
@@ -50,6 +60,7 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
         console.log('Received Event: ' + id);      
     },
+    
     // result contains any message sent from the plugin call
     successHandler: function(result) {
      //   alert('Callback Success! Result = '+result)
@@ -57,6 +68,7 @@ var app = {
     errorHandler:function(error) {
         alert(error);
     },
+    //Area gestione notifiche Android (GCM = Google Cloud Messaging)
     onNotificationGCM: function(e) {
         switch( e.event )
         {
@@ -74,8 +86,6 @@ var app = {
                     setTimeout(function() {
                       ref.close();
                     }, 5000);     
-
-
                 }
                 break;
 
@@ -104,6 +114,25 @@ var app = {
             default:
                 alert('An unknown GCM event has occurred');
                 break;
+        }
+    },
+     //Area gestione notifiche iOS (apple)
+    onNotificationAPN: function(event) {
+        var pushNotification = window.plugins.pushNotification;
+        console.log("Received a notification! " + event.alert);
+        console.log("event sound " + event.sound);
+        console.log("event badge " + event.badge);
+        console.log("event " + event);
+        if (event.alert) {
+            navigator.notification.alert(event.alert);
+        }
+        if (event.badge) {
+            console.log("Set badge on  " + pushNotification);
+            pushNotification.setApplicationIconBadgeNumber(this.successHandler, event.badge);
+        }
+        if (event.sound) {
+            var snd = new Media(event.sound);
+            snd.play();
         }
     }
 

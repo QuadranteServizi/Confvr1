@@ -149,6 +149,13 @@ module.exports = [
         "clobbers": [
             "device"
         ]
+    },
+    {
+        "file": "plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js",
+        "id": "com.phonegap.plugins.PushPlugin.PushNotification",
+        "clobbers": [
+            "PushNotification"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -156,7 +163,8 @@ module.exports.metadata =
 {
     "org.apache.cordova.file": "1.0.1",
     "org.apache.cordova.file-transfer": "0.4.2",
-    "org.apache.cordova.device": "0.2.8"
+    "org.apache.cordova.device": "0.2.8",
+    "com.phonegap.plugins.PushPlugin": "2.2.0"
 }
 // BOTTOM OF METADATA
 });
